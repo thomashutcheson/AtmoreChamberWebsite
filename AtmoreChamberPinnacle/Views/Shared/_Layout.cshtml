@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="~/Content/images/appicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="~/Content/images/appicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/Content/images/appicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/Content/images/appicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/Content/images/appicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="~/Content/images/appicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="~/Content/images/appicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="~/Content/images/appicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Content/images/appicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="~/Content/images/appicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Content/images/appicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="~/Content/images/appicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/images/appicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="~/Content/images/appicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    @*<link rel="icon" href="~/Content/images/favicon.ico" type="image/x-icon" />*@
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon" />
+
+    <title>@ViewBag.Title - Atmore Area Chamber of Commerce</title>
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- Datatables CSS-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+</head>
+
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="img-fluid rounded m-0" src="~/Content/images/cityscape-white.png" alt="">
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Begin Constant Contact Active Forms -->
+<script>var _ctct_m = "3c1da5e6a528520c8335d6f5b5c2fe9e";</script>
+<script id="signupScript" src="//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js" async defer></script>
+<!-- End Constant Contact Active Forms -->
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark-teal fixed-top">
+        <div id="nav-container" class="container">
+            <div id="nav-container-1" class="col-sm-2">
+                <a class="navbar-brand" href="/Home">@*<img src="~/Content/images/nav-brand.png" alt="" class="img-fluid" />*@ #DiscoverAtmore</a>
+            </div>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="nav-container-2" class="col-sm-8">
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown middle-align">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAboutAtmore" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                About Atmore
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownAboutAtmore">
+                                <a class="dropdown-item" href="/AboutAtmore/OurHistory">Our History</a>
+                                <a class="dropdown-item" href="/AboutAtmore/OurCommunity">Our Community</a>
+                                <a class="dropdown-item" href="/AboutAtmore/RelocationAndHelpfulResources">Relocation and Helpful Resources</a>
+                                <a class="dropdown-item" href="/AboutAtmore/InformationRequest">Information Request</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown middle-align">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAtmoreChamber" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                About The Chamber
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownAtmoreChamber">
+                                <a class="dropdown-item" href="/AtmoreChamber/ExecutiveBoard">Our Executive Board</a>
+                                <a class="dropdown-item" href="/AtmoreChamber/BoardOfDirectors">Board of Directors</a>
+                                <a class="dropdown-item" href="/AtmoreChamber/Staff">Staff</a>
+                                <a class="dropdown-item middle-align" href="/Members/Index">Members of the Chamber</a>
+                                
+
+
+
+
+                            </div>
+                        </li>
+                        <li class="nav-item middle-align">
+                            <a class="nav-link" href="/Calendar/">Calendar</a>
+                        </li>
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item middle-align">
+                                <a class="nav-link" href="/Role/Index/">Manage Users</a>
+                            </li>
+                        }
+
+                        <li class="nav-item middle-align">
+                            <a class="nav-link" href="#">Shop the Chamber</a>
+                        </li>
+                        <div id="nav-container-3" class="col-sm-1">
+                            <li id="user-account">
+                                @Html.Partial("_LoginPartial")
+                            </li>
+                        </div>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+        @RenderBody()
+
+        <hr />
+
+        <!-- Call to Action Section -->
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <p>At the Chamber, we don't just talk about the future... we help shape it and we need your help! The activities of the Chamber are limited only by the support of the community. Let's combine our talents and make Atmore the best it can be. </p>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-lg btn-primary btn-block" href="/Home/Contact">Contact Us!</a>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+    <!-- Footer -->
+    <footer class="bg-dark-teal main-footer">
+        <br />
+        <h4 class="sponsor-heading">Cornerstone Sponsors</h4>
+        <br />
+        <div class="row sponsor-row align-content-center">
+            <div class="col-sm-6 sponsor-image">
+                <a href="http://pci-nsn.gov/" alt="Poarch Creek Indians" target="_blank">
+                    <img src="~/Content/images/sponsors/pci.png" alt="Poarch Creek Indians" />
+                </a>
+            </div>
+            <div class="col-sm-6 sponsor-image">
+                <a href="https://cityofatmore.com/" alt="City of Atmore" target="_blank">
+                    <img class="landscape-image" src="~/Content/images/sponsors/atmorelogo.png" alt="Atmore Alabama" />
+                </a>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <hr class="sponsor-hr" />
+        </div>
+
+        <h4 class="sponsor-heading">Diamond Sponsors</h4>
+        <br />
+        <div class="row sponsor-row align-content-center">
+            <div class="col-sm-4 sponsor-image">
+                <a href="https://www.fnbandt.com/" alt="First National Bank & Trust" target="_blank">
+                    <img class="rounded" src="~/Content/images/sponsors/FNBTLogo.png" alt="First National Bank" />
+                </a>
+            </div>
+            <div class="col-sm-4 sponsor-image">
+                <a href="https://www.unitedbank.com/" alt="United Bank" target="_blank">
+                    <img class="rounded" src="~/Content/images/sponsors/UnitedLogo.png" alt="United Bank" />
+                </a>
+            </div>
+            <div class="col-sm-4 sponsor-image">
+                <a href="https://windcreekatmore.com/" alt="Windcreek Atmore" target="_blank">
+                    <img class="rounded" src="~/Content/images/sponsors/wind-creek.png" alt="Wind Creek" />
+                </a>
+            </div>
+        </div>
+
+    </footer>
+
+    <div class="row footer-menu ">
+        <div class="col-sm-12 middle-align p-1">
+            <!-- left -->
+            <p class="footer-menu-left copyright-statement middle-align">
+                &copy; @DateTime.Now.Year - Atmore Area Chamber of Commerce
+            </p>
+        </div>
+
+        <div class="col-sm-6 middle-align">
+            <!-- right -->
+            <!--
+            <p class="footer-menu-right middle-align">
+                <a href="/">Home</a>
+                <text class="footer-menu-list pipe">&nbsp;|&nbsp;</text>
+                <a class="footer-menu-list" href="/page/Recent-News">Recent News</a>
+                <text class="pipe">&nbsp;|&nbsp;</text>
+                <a class="footer-menu-list" href="/page/links">Helpful Links</a>
+                <text class="footer-menu-list pipe">&nbsp;|&nbsp;</text>
+                <a class="footer-menu-list" href="/page/Contact">Contact</a>
+                <text class="footer-menu-list pipe">&nbsp;|&nbsp;</text>
+                <a class="footer-menu-list" href="/page/membership-application">Join Today</a>
+            </p>
+                -->
+            <!-- end right -->
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <!-- Datatables Scripts-->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+</body>
+</html>
+
+
