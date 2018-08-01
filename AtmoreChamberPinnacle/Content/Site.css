@@ -35,6 +35,11 @@ h1, .h1 {
     text-decoration: none;
 }
 
+    .RHS-head a:hover{
+        color: #db303e;
+        text-decoration: none;
+    }
+
 #myTable {
     border: 3px solid black;
     border-radius: 25px;
@@ -43,9 +48,10 @@ h1, .h1 {
     padding-right: 5px;
     padding-bottom: 15px;
 }
-#myTable a {
-    color: #21a3a2;
-}
+
+    #myTable a {
+        color: #21a3a2;
+    }
 
 #roleCreate {
     text-align: right;
@@ -78,13 +84,13 @@ h1, .h1 {
     color: rgba(255, 255, 255, 0.75);
 }
 
-#user-account a:hover {
-    margin: auto;
-    float: none;
-    vertical-align: middle;
-    text-align: center;
-    color: white;
-}
+    #user-account a:hover {
+        margin: auto;
+        float: none;
+        vertical-align: middle;
+        text-align: center;
+        color: white;
+    }
 
 .user-account {
     display: inline;
@@ -153,7 +159,6 @@ div .middle-align {
 #nav-container-2 {
     margin-right: 100px;
     padding: 0 0 0 0;
-
 }
 
 #nav-container-3 {
@@ -175,17 +180,29 @@ div .middle-align {
     margin-bottom: 30px;
 }
 
+/* Cards */
+.card-link, .fa-envelope:before , .fa-envelope {
+    color: #21a3a2;
+    text-decoration: none;
+}
+
 .card-header {
     color: white;
 }
+
+.card-body a {
+    color: #21a3a2;
+    text-decoration: none;
+}
+/* Card END */
 
 .btn-link {
     color: white;
 }
 
-.btn-link:hover {
-    color: white;
-}
+    .btn-link:hover {
+        color: white;
+    }
 
 .nounderline {
     text-decoration: none !important
@@ -249,7 +266,6 @@ div .middle-align {
 
     .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
         color: rgba(255, 255, 255, 1);
-        
     }
 
     .navbar-dark .navbar-nav .nav-link.disabled {
