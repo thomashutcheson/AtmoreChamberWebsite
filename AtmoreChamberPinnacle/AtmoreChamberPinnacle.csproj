@@ -225,6 +225,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\realestate\atmore-real-estate.jpg" />
     <Content Include="errorpages\404.html" />
     <Content Include="errorpages\503.html" />
     <Content Include="errorpages\maintenance.html" />
