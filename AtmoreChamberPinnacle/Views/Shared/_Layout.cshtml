@@ -102,7 +102,7 @@
                             <a class="nav-link" href="/Calendar/">Calendar</a>
                         </li>
 
-                        @if (User.IsInRole("Admin"))
+                        @if (User.IsInRole("Admin") || User.IsInRole("Member"))
                         {
                             <li class="nav-item middle-align">
                                 <a class="nav-link" href="/Role/Index/">Manage Users</a>
