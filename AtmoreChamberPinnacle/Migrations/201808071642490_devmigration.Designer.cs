@@ -7,13 +7,13 @@ namespace AtmoreChamberPinnacle.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class professionalname : IMigrationMetadata
+    public sealed partial class devmigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(professionalname));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(devmigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201807271534480_professionalname"; }
+            get { return "201808071642490_devmigration"; }
         }
         
         string IMigrationMetadata.Source

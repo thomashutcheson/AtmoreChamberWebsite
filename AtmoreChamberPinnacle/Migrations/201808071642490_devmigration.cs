@@ -3,38 +3,10 @@ namespace AtmoreChamberPinnacle.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class professionalname : DbMigration
+    public partial class devmigration : DbMigration
     {
         public override void Up()
         {
-            CreateTable(
-                "dbo.Member Directory",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        Business = c.String(nullable: false, maxLength: 255),
-                        BusinessAddress = c.String(maxLength: 255),
-                        Phone = c.String(maxLength: 50),
-                        Fax = c.String(maxLength: 50),
-                        Website = c.String(maxLength: 75),
-                        Industry = c.String(maxLength: 75),
-                    })
-                .PrimaryKey(t => t.ID);
-            
-            //CreateTable(
-            //    "dbo.Members",
-            //    c => new
-            //        {
-            //            ID = c.Int(nullable: false, identity: true),
-            //            Business = c.String(nullable: false, maxLength: 255),
-            //            BusinessAddress = c.String(maxLength: 255),
-            //            Phone = c.String(maxLength: 50),
-            //            Fax = c.String(maxLength: 50),
-            //            Website = c.String(maxLength: 75),
-            //            Industry = c.String(maxLength: 75),
-            //        })
-            //    .PrimaryKey(t => t.ID);
-            
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -122,8 +94,8 @@ namespace AtmoreChamberPinnacle.Migrations
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
-            //DropTable("dbo.Members");
-            DropTable("dbo.Member Directory");
+            
+            
         }
     }
 }
