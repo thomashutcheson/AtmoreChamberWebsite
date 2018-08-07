@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using AtmoreChamberPinnacle.Models;
+using AtmoreChamberPinnacle.Models.OnlineStore;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using AtmoreChamberPinnacle.Models;
-using AtmoreChamberPinnacle.Models.OnlineStore;
 
 namespace AtmoreChamberPinnacle.Controllers
 {
     public class StoreController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
+        public ActionResult StoreFront()
+        {
+            return View();
+        }
+
 
         // GET: Store
         public ActionResult Index()

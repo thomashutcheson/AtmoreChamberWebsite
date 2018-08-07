@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<AtmoreChamberPinnacle.Models.OnlineStore.Product>
 
 @{
-    ViewBag.Title = "StoreFront";
+    ViewBag.Title = "Atmore Chamber Store";
 }
 
-<h2>StoreFront</h2>
+<h2>Atmore Chamber Store</h2>
 
 
-<table class="table">
-    <tr>
-        <th>
+<div class="">
+    <div>
+        @*<th>
             @Html.DisplayNameFor(model => model.ProductName)
         </th>
         <th>
@@ -30,12 +30,13 @@
         <th>
             @Html.DisplayNameFor(model => model.imgSource)
         </th>
-        <th></th>
-    </tr>
+        <th></th>*@
+    </div>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
+    <div>
+
+        @*<td>
             @Html.DisplayFor(modelItem => item.ProductName)
         </td>
         <td>
@@ -58,8 +59,8 @@
         </td>
         <td>
             @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
-        </td>
-    </tr>
+        </td>*@
+    </div>
 }
 
-</table>
+</div>
