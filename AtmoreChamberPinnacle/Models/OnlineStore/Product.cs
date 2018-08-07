@@ -19,7 +19,7 @@ namespace AtmoreChamberPinnacle.Models.OnlineStore
         public string Description { get; set; }
 
         [Display(Name = "Is it in stock?")]
-        public bool isInStock { get; set; }
+        public bool isInStock { get { return Quantity > 0; } }
 
         [Required]
         [Display(Name = "Amount in stock")]
@@ -31,6 +31,7 @@ namespace AtmoreChamberPinnacle.Models.OnlineStore
 
         [Display(Name = "Picture")]
         public string imgSource { get; set; }
+
 
     }
 }
