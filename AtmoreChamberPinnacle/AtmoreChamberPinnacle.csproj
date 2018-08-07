@@ -200,6 +200,7 @@
     <Compile Include="Controllers\MemberDirectoriesController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -232,6 +233,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\realestate\atmore-real-estate.jpg" />
+    <Content Include="Content\sqpaymentform.css" />
     <Content Include="errorpages\404.html" />
     <Content Include="errorpages\503.html" />
     <Content Include="errorpages\maintenance.html" />
@@ -318,6 +320,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\sqpaymentform.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -371,6 +374,12 @@
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Role\AssignRoleToUser.cshtml" />
     <Content Include="Views\Account\RegisterRole.cshtml" />
+    <Content Include="Views\Store\Create.cshtml" />
+    <Content Include="Views\Store\Delete.cshtml" />
+    <Content Include="Views\Store\Details.cshtml" />
+    <Content Include="Views\Store\Edit.cshtml" />
+    <Content Include="Views\Store\Index.cshtml" />
+    <Content Include="Views\Store\StoreFront.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
