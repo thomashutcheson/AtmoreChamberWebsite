@@ -13,7 +13,7 @@ namespace AtmoreChamberPinnacle.Controllers
 
         public ActionResult StoreFront()
         {
-            return View();
+            return View(db.Products.ToList());
         }
 
 

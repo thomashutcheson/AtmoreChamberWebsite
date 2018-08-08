@@ -1,15 +1,8 @@
 ﻿@model IEnumerable<AtmoreChamberPinnacle.Models.OnlineStore.Product>
 
-@{
-    ViewBag.Title = "Atmore Chamber Store";
-}
-
-<h2>Atmore Chamber Store</h2>
-
-
-<div class="">
-    <div>
-        @*<th>
+<table class="table">
+    <tr>
+        <th>
             @Html.DisplayNameFor(model => model.ProductName)
         </th>
         <th>
@@ -17,9 +10,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.isInStock)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Quantity)
@@ -30,13 +20,12 @@
         <th>
             @Html.DisplayNameFor(model => model.imgSource)
         </th>
-        <th></th>*@
-    </div>
+        <th></th>
+    </tr>
 
 @foreach (var item in Model) {
-    <div>
-
-        @*<td>
+    <tr>
+        <td>
             @Html.DisplayFor(modelItem => item.ProductName)
         </td>
         <td>
@@ -44,9 +33,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.isInStock)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Quantity)
@@ -58,9 +44,11 @@
             @Html.DisplayFor(modelItem => item.imgSource)
         </td>
         <td>
-            @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
-        </td>*@
-    </div>
+            @Html.ActionLink("Add to Cart", "Edit", new { id=item.ProductID }) |
+            Amount in Cart: 0 |
+            @Html.ActionLink("Remove from Cart", "Details", new { id=item.ProductID }) |
+        </td>
+    </tr>
 }
 
-</div>
+</table>
