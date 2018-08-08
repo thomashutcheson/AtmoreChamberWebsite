@@ -516,12 +516,6 @@
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Role\AssignRoleToUser.cshtml" />
     <Content Include="Views\Account\RegisterRole.cshtml" />
-    <Content Include="Views\Store\Create.cshtml" />
-    <Content Include="Views\Store\Delete.cshtml" />
-    <Content Include="Views\Store\Details.cshtml" />
-    <Content Include="Views\Store\Edit.cshtml" />
-    <Content Include="Views\Store\Index.cshtml" />
-    <Content Include="Views\Store\StoreFront.cshtml" />
     <Content Include="Views\Calendar\UpcomingEvents.cshtml" />
     <Content Include="Views\Calendar\Index.cshtml" />
     <Content Include="Scripts\popper-utils.js.map" />
