@@ -1,12 +1,17 @@
 ﻿using AtmoreChamber.Models;
 using Google.Apis.Auth.OAuth2;
+using Google.Apis.Auth.OAuth2.Flows;
+using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Calendar.v3;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
+using Microsoft.AspNet.Identity;
+using Microsoft.Owin.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 
 namespace AtmoreChamber.Controllers
@@ -16,7 +21,7 @@ namespace AtmoreChamber.Controllers
     {
         private readonly IDataStore dataStore = new FileDataStore(GoogleWebAuthorizationBroker.Folder);
 
-        /*private async Task<UserCredential> GetCredentialForApiAsync()
+        private async Task<UserCredential> GetCredentialForApiAsync()
         {
             var initializer = new GoogleAuthorizationCodeFlow.Initializer
             {
@@ -35,17 +40,18 @@ namespace AtmoreChamber.Controllers
 
             var token = await dataStore.GetAsync<TokenResponse>(userId);
             return new UserCredential(flow, userId, token);
-        }*/
+        }
 
         // GET: /Calendar/UpcomingEvents
+        
         public async Task<ActionResult> UpcomingEvents()
         {
             const int MaxEventsPerCalendar = 20;
             const int MaxEventsOverall = 50;
 
-            /*var model = new UpcomingEventsViewModel();*/
-            /*
-            var credential = await GetCredentialForApiAsync();*/
+            var model = new UpcomingEventsViewModel();
+            
+            var credential = await GetCredentialForApiAsync();
 
             var initializer = new BaseClientService.Initializer()
             {
@@ -93,9 +99,9 @@ namespace AtmoreChamber.Controllers
                     Events = grouping,
                 });
             }
-            /*
+            
             model.EventGroups = eventGroups;
-            return View(model);*/
+            return View(model);
         }
     }
 }
