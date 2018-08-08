@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace AtmoreChamberPinnacle.Models
+namespace AtmoreChamber.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

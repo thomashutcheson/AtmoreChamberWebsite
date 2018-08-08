@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AtmoreChamberPinnacle.Models.OnlineStore
+namespace AtmoreChamber.Models.OnlineStore
 {
     public class Cart
     {

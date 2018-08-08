@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using AtmoreChamber.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using AtmoreChamberPinnacle.Models;
 
-namespace AtmoreChamberPinnacle.Controllers
+namespace AtmoreChamber.Controllers
 {
     public class MembersController : Controller
     {

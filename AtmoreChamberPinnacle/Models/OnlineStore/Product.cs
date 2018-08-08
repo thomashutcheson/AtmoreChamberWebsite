@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AtmoreChamberPinnacle.Models.OnlineStore
+namespace AtmoreChamber.Models.OnlineStore
 {
     public class Product
     {

@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 
-namespace AtmoreChamberPinnacle.Model
+namespace AtmoreChamber.Model
 {
     [Table("Member Directory")]
     public partial class MemberDirectory

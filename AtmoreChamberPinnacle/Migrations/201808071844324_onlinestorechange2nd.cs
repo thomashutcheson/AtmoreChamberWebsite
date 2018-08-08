@@ -1,8 +1,7 @@
-namespace AtmoreChamberPinnacle.Migrations
+namespace AtmoreChamber.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class onlinestorechange2nd : DbMigration
     {
         public override void Up()

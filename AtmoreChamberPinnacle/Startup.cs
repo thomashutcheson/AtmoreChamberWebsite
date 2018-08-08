@@ -1,11 +1,11 @@
-﻿using AtmoreChamberPinnacle.Models;
+﻿using AtmoreChamber.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(AtmoreChamberPinnacle.Startup))]
-namespace AtmoreChamberPinnacle
+[assembly: OwinStartupAttribute(typeof(AtmoreChamber.Startup))]
+namespace AtmoreChamber
 {
 
     

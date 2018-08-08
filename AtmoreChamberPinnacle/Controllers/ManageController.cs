@@ -1,14 +1,13 @@
-﻿using System;
+﻿using AtmoreChamber.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using AtmoreChamberPinnacle.Models;
 
-namespace AtmoreChamberPinnacle.Controllers
+namespace AtmoreChamber.Controllers
 {
     [Authorize]
     public class ManageController : Controller

@@ -1,11 +1,11 @@
-﻿using AtmoreChamberPinnacle.Models;
-using AtmoreChamberPinnacle.Models.OnlineStore;
+﻿using AtmoreChamber.Models;
+using AtmoreChamber.Models.OnlineStore;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 
-namespace AtmoreChamberPinnacle.Controllers
+namespace AtmoreChamber.Controllers
 {
     public class StoreController : Controller
     {
