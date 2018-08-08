@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Google.Apis.Calendar.v3.Data;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace AtmoreChamberPinnacle.Models
+namespace AtmoreChamber.Models
 {
     /// <summary>
     /// A labeled group of calendar events.
