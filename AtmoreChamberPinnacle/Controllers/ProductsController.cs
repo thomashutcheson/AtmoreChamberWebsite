@@ -28,12 +28,12 @@ namespace AtmoreChamber.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Products products = db.Products.Find(id);
-            if (products == null)
+            Products Products = db.Products.Find(id);
+            if (Products == null)
             {
                 return HttpNotFound();
             }
-            return View(products);
+            return View(Products);
         }
 
         // GET: Products/Create
@@ -49,16 +49,16 @@ namespace AtmoreChamber.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductID,ProductTitle,ProductDescription,ProductIMG,ProductPrice")] Products products)
+        public ActionResult Create([Bind(Include = "ProductID,ProductTitle,ProductDescription,ProductIMG,ProductPrice")] Products Products)
         {
             if (ModelState.IsValid)
             {
-                db.Products.Add(products);
+                db.Products.Add(Products);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(products);
+            return View(Products);
         }
 
         // GET: Products/Edit/5
@@ -69,12 +69,12 @@ namespace AtmoreChamber.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Products products = db.Products.Find(id);
-            if (products == null)
+            Products Products = db.Products.Find(id);
+            if (Products == null)
             {
                 return HttpNotFound();
             }
-            return View(products);
+            return View(Products);
         }
 
         // POST: Products/Edit/5
@@ -83,15 +83,15 @@ namespace AtmoreChamber.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductID,ProductTitle,ProductDescription,ProductIMG,ProductPrice")] Products products)
+        public ActionResult Edit([Bind(Include = "ProductID,ProductTitle,ProductDescription,ProductIMG,ProductPrice")] Products Products)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(products).State = EntityState.Modified;
+                db.Entry(Products).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(products);
+            return View(Products);
         }
 
         // GET: Products/Delete/5
@@ -102,12 +102,12 @@ namespace AtmoreChamber.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Products products = db.Products.Find(id);
-            if (products == null)
+            Products Products = db.Products.Find(id);
+            if (Products == null)
             {
                 return HttpNotFound();
             }
-            return View(products);
+            return View(Products);
         }
 
         // POST: Products/Delete/5
@@ -116,8 +116,8 @@ namespace AtmoreChamber.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Products products = db.Products.Find(id);
-            db.Products.Remove(products);
+            Products Products = db.Products.Find(id);
+            db.Products.Remove(Products);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -134,10 +134,10 @@ namespace AtmoreChamber.Controllers
 
         public async Task<ActionResult> List()
         {
-            var products = db.Products.SqlQuery("SELECT * FROM dbo.Products").ToList();
+            var Products = db.Products.SqlQuery("SELECT * FROM dbo.Products").ToList();
 
 
-            return View(products);
+            return View(Products);
         }
 
     }
