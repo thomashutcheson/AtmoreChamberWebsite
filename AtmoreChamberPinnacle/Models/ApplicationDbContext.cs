@@ -1,8 +1,4 @@
-﻿using System.Data.Entity;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace AtmoreChamber.Models
 {
@@ -19,10 +15,15 @@ namespace AtmoreChamber.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<AtmoreChamber.Model.MemberDirectory> MemberDirectories { get; set; }
+        //public System.Data.Entity.DbSet<AtmoreChamber.Model.MemberDirectory> MemberDirectories { get; set; }
 
-        public System.Data.Entity.DbSet<AtmoreChamber.Models.Members> Members { get; set; }
+        public System.Data.Entity.DbSet<Members> Members { get; set; }
 
-        public System.Data.Entity.DbSet<AtmoreChamber.Models.OnlineStore.Product> Products { get; set; }
+        public System.Data.Entity.DbSet<OnlineStore.Product> Products { get; set; }
+
+        public System.Data.Entity.DbSet<Event> Events { get; set; }
+
+        //public System.Data.Entity.DbSet<CalendarEventGroup> EventGroups { get; set; }
+
     }
 }
