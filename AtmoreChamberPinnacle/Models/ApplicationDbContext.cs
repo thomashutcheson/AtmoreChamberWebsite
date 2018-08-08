@@ -19,7 +19,7 @@ namespace AtmoreChamber.Models
 
         public System.Data.Entity.DbSet<Members> Members { get; set; }
 
-        public System.Data.Entity.DbSet<OnlineStore.Product> Products { get; set; }
+        public System.Data.Entity.DbSet<Products> Products { get; set; }
 
         public System.Data.Entity.DbSet<Event> Events { get; set; }
 
