@@ -338,8 +338,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\images\appicons\manifest.json" />
-    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
-    <None Include="Properties\PublishProfiles\DevServer.pubxml" />
+    <None Include="Properties\PublishProfiles\DeveloperServer.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
