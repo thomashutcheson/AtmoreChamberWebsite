@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
 
 namespace AtmoreChamber.Models
 {
-    public class Products
+    public class Product
     {
 
         [Key]
@@ -17,12 +19,15 @@ namespace AtmoreChamber.Models
         public string ProductDescription { get; set; }
 
         [DisplayName("Image")]
-        public byte[] ProductIMG { get; set; }
+        public string ProductIMG { get; set; }
 
         [Required]
         [DisplayName("Price")]
         [DataType(DataType.Currency)]
         public float? ProductPrice { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase files { get; set; }
 
     }
 }

@@ -1,15 +1,13 @@
 ﻿using AtmoreChamber.Models;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
-using Square.Connect.Api;
-using Square.Connect.Client;
-using Square.Connect.Model;
 
-
-namespace AtmoreChamber.Controllers
+namespace AtmoreChamberPinnacle.Controllers
 {
     public class ProductsController : Controller
     {
@@ -28,16 +26,15 @@ namespace AtmoreChamber.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Products Products = db.Products.Find(id);
-            if (Products == null)
+            Product products = db.Products.Find(id);
+            if (products == null)
             {
                 return HttpNotFound();
             }
-            return View(Products);
+            return View(products);
         }
 
         // GET: Products/Create
-        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -46,78 +43,87 @@ namespace AtmoreChamber.Controllers
         // POST: Products/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductID,ProductTitle,ProductDescription,ProductIMG,ProductPrice")] Products Products)
+        public ActionResult Create([Bind(Include = "ProductID,ProductTitle,ProductDescription,ProductIMG,ProductPrice")] Product product)
         {
             if (ModelState.IsValid)
             {
-                db.Products.Add(Products);
+                if(Request.Files != null)
+                {
+                    foreach (HttpPostedFile file in Request.Files)
+                    {
+                        if (file.ContentLength > 0)
+                        {
+                            var fileName = Path.GetFileName(file.FileName);
+                            var path = Path.Combine(Server.MapPath("~/Content/images/products"), fileName);
+                            file.SaveAs(path);
+                            product.ProductIMG = fileName;
+                        }
+                    }
+                }
+
+                db.Products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(Products);
+            return View(product);
         }
 
         // GET: Products/Edit/5
-        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Products Products = db.Products.Find(id);
-            if (Products == null)
+            Product products = db.Products.Find(id);
+            if (products == null)
             {
                 return HttpNotFound();
             }
-            return View(Products);
+            return View(products);
         }
 
         // POST: Products/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductID,ProductTitle,ProductDescription,ProductIMG,ProductPrice")] Products Products)
+        public ActionResult Edit([Bind(Include = "ProductID,ProductTitle,ProductDescription,ProductIMG,ProductPrice")] Product products)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(Products).State = EntityState.Modified;
+                db.Entry(products).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(Products);
+            return View(products);
         }
 
         // GET: Products/Delete/5
-        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Products Products = db.Products.Find(id);
-            if (Products == null)
+            Product products = db.Products.Find(id);
+            if (products == null)
             {
                 return HttpNotFound();
             }
-            return View(Products);
+            return View(products);
         }
 
         // POST: Products/Delete/5
-        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Products Products = db.Products.Find(id);
-            db.Products.Remove(Products);
+            Product products = db.Products.Find(id);
+            db.Products.Remove(products);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -131,7 +137,6 @@ namespace AtmoreChamber.Controllers
             base.Dispose(disposing);
         }
 
-
         public async Task<ActionResult> List()
         {
             var Products = db.Products.SqlQuery("SELECT * FROM dbo.Products").ToList();
@@ -139,6 +144,7 @@ namespace AtmoreChamber.Controllers
 
             return View(Products);
         }
+
 
     }
 }
