@@ -1,4 +1,5 @@
 ﻿using AtmoreChamber.Models;
+using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -10,8 +11,10 @@ namespace AtmoreChamber.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        public IDisposable New { get; private set; }
+
         // GET: Members
-        
+
         [Authorize]
         public ActionResult Index()
         {
@@ -111,8 +114,10 @@ namespace AtmoreChamber.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Members members = db.Members.Find(id);
-            db.Members.Remove(members);
-            db.SaveChanges();
+            if (members != null) {
+                members.DeletedDate = DateTime.Now;
+                db.SaveChanges();
+            }
             return RedirectToAction("Index");
         }
 
