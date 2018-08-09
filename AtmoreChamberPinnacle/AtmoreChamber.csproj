@@ -239,21 +239,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808082117177_storemigration3.cs" />
-    <Compile Include="Migrations\201808082117177_storemigration3.Designer.cs">
-      <DependentUpon>201808082117177_storemigration3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808091302153_aug9th.cs" />
-    <Compile Include="Migrations\201808091302153_aug9th.Designer.cs">
-      <DependentUpon>201808091302153_aug9th.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808091340061_modelchanges.cs" />
-    <Compile Include="Migrations\201808091340061_modelchanges.Designer.cs">
-      <DependentUpon>201808091340061_modelchanges.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808091428181_dbchanges.cs" />
-    <Compile Include="Migrations\201808091428181_dbchanges.Designer.cs">
-      <DependentUpon>201808091428181_dbchanges.cs</DependentUpon>
+    <Compile Include="Migrations\201808091442129_pleasework.cs" />
+    <Compile Include="Migrations\201808091442129_pleasework.Designer.cs">
+      <DependentUpon>201808091442129_pleasework.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -558,17 +546,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808082117177_storemigration3.resx">
-      <DependentUpon>201808082117177_storemigration3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808091302153_aug9th.resx">
-      <DependentUpon>201808091302153_aug9th.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808091340061_modelchanges.resx">
-      <DependentUpon>201808091340061_modelchanges.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808091428181_dbchanges.resx">
-      <DependentUpon>201808091428181_dbchanges.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808091442129_pleasework.resx">
+      <DependentUpon>201808091442129_pleasework.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

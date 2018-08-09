@@ -1,5 +1,6 @@
 ﻿using AtmoreChamber.Models;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -18,7 +19,7 @@ namespace AtmoreChamber.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            return View(db.Members.ToList());
+            return View(db.Members.Where(m=>m.DeletedDate == null).ToList());
         }
 
         // GET: Members/Details/5

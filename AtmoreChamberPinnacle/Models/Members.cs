@@ -26,8 +26,8 @@ namespace AtmoreChamber.Models
             public string Website { get; set; }
             [StringLength(75)]
             public string Industry { get; set; }
-
-            public DateTime DeletedDate { get; set; }
+            
+            public DateTime? DeletedDate { get; set; }
         
         }
     

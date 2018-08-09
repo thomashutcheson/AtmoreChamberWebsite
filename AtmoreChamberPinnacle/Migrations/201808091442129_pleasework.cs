@@ -3,16 +3,16 @@ namespace AtmoreChamber.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class aug9th : DbMigration
+    public partial class pleasework : DbMigration
     {
         public override void Up()
         {
-            AlterColumn("dbo.Products", "ProductIMG", c => c.String());
+            AlterColumn("dbo.Members", "DeletedDate", c => c.DateTime());
         }
         
         public override void Down()
         {
-            AlterColumn("dbo.Products", "ProductIMG", c => c.Binary());
+            AlterColumn("dbo.Members", "DeletedDate", c => c.DateTime(nullable: false));
         }
     }
 }
