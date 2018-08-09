@@ -247,6 +247,10 @@
     <Compile Include="Migrations\201808091302153_aug9th.Designer.cs">
       <DependentUpon>201808091302153_aug9th.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808091357325_jayAug9.cs" />
+    <Compile Include="Migrations\201808091357325_jayAug9.Designer.cs">
+      <DependentUpon>201808091357325_jayAug9.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -355,6 +359,7 @@
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper.min.js.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
@@ -555,6 +560,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808091302153_aug9th.resx">
       <DependentUpon>201808091302153_aug9th.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808091357325_jayAug9.resx">
+      <DependentUpon>201808091357325_jayAug9.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
