@@ -7,13 +7,13 @@ namespace AtmoreChamber.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class storemigration2 : IMigrationMetadata
+    public sealed partial class storemigration3 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(storemigration2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(storemigration3));
         
         string IMigrationMetadata.Id
         {
-            get { return "201808081805041_storemigration2"; }
+            get { return "201808082117177_storemigration3"; }
         }
         
         string IMigrationMetadata.Source

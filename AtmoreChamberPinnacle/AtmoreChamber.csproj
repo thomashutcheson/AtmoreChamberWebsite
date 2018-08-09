@@ -239,13 +239,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808081748524_storemigration.cs" />
-    <Compile Include="Migrations\201808081748524_storemigration.Designer.cs">
-      <DependentUpon>201808081748524_storemigration.cs</DependentUpon>
+    <Compile Include="Migrations\201808082117177_storemigration3.cs" />
+    <Compile Include="Migrations\201808082117177_storemigration3.Designer.cs">
+      <DependentUpon>201808082117177_storemigration3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808081805041_storemigration2.cs" />
-    <Compile Include="Migrations\201808081805041_storemigration2.Designer.cs">
-      <DependentUpon>201808081805041_storemigration2.cs</DependentUpon>
+    <Compile Include="Migrations\201808091302153_aug9th.cs" />
+    <Compile Include="Migrations\201808091302153_aug9th.Designer.cs">
+      <DependentUpon>201808091302153_aug9th.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201808091340061_modelchanges.cs" />
     <Compile Include="Migrations\201808091340061_modelchanges.Designer.cs">
@@ -262,7 +262,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Members.cs" />
     <Compile Include="Models\MemberDirectory.cs" />
-    <Compile Include="Models\Products.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\UserRoles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -526,15 +526,16 @@
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Views\Products\List.cshtml" />
     <Content Include="Views\Products\Create.cshtml" />
     <Content Include="Views\Products\Delete.cshtml" />
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
-    <Content Include="Views\Products\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\images\products\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
@@ -553,11 +554,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808081748524_storemigration.resx">
-      <DependentUpon>201808081748524_storemigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808082117177_storemigration3.resx">
+      <DependentUpon>201808082117177_storemigration3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808081805041_storemigration2.resx">
-      <DependentUpon>201808081805041_storemigration2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808091302153_aug9th.resx">
+      <DependentUpon>201808091302153_aug9th.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808091340061_modelchanges.resx">
       <DependentUpon>201808091340061_modelchanges.cs</DependentUpon>
