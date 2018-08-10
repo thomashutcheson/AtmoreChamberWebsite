@@ -1,4 +1,5 @@
 ﻿@using AtmoreChamber.Models
+@model Transaction
 @{ List<Item> cart = (List<Item>)Session["cart"] != null ? (List<Item>)Session["cart"] : new List<Item>();
     ViewBag.Title = "Cart";
 
@@ -140,4 +141,11 @@
     </div>
 </div>
 
+<script>
+    function posttransaction() {
+
+        $('card-nonce')
+
+    }
+</script>
 

@@ -145,6 +145,12 @@ namespace AtmoreChamberPinnacle.Controllers
             return View(Products);
         }
 
+        public ActionResult AddressForm()
+        {
+
+            return View();
+        }
+
         public ActionResult SqPaymentForm()
         {
 
