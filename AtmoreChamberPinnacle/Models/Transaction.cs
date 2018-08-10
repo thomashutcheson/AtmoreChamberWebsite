@@ -2,7 +2,6 @@
 using Square.Connect.Client;
 using Square.Connect.Model;
 using System;
-using Microsoft.Extensions.Configuration;
 
 namespace AtmoreChamber.Models
 {
@@ -20,10 +19,11 @@ namespace AtmoreChamber.Models
             set;
         }
 
-        public Transaction(IConfiguration configuration)
-        {
-            this.LocationId = configuration["AppSettings:LocationId"];
-        }
+        // commented at end of day 8/10
+        //public Transaction(IConfiguration configuration)
+        //{
+        //    this.LocationId = configuration["AppSettings:LocationId"];
+        //}
 
         public void OnPost(string nonce, int transamount)
         {
