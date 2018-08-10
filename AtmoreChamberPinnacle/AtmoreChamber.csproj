@@ -229,6 +229,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AtmoreChamberController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
@@ -249,16 +250,17 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
-    <Compile Include="Models\CalendarEventGroup.cs" />
-    <Compile Include="Models\CalendarViewModels.cs" />
     <Compile Include="Models\ErrorViewModel.cs" />
     <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Members.cs" />
     <Compile Include="Models\MemberDirectory.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Transaction.cs" />
     <Compile Include="Models\UserRoles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -1160,6 +1162,7 @@
     <Content Include="Views\Products\Manage.cshtml" />
     <Content Include="Views\Products\SqPaymentForm.cshtml" />
     <Content Include="Views\Products\SqPaymentProcessing.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -24,7 +24,7 @@ namespace AtmoreChamber.Models
         [Required]
         [DisplayName("Price")]
         [DataType(DataType.Currency)]
-        public float? ProductPrice { get; set; }
+        public float ProductPrice { get; set; }
 
         [NotMapped]
         public HttpPostedFileBase files { get; set; }
