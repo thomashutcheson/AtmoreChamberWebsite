@@ -1163,6 +1163,7 @@
     <Content Include="Views\Products\SqPaymentForm.cshtml" />
     <Content Include="Views\Products\SqPaymentProcessing.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Products\AddressForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

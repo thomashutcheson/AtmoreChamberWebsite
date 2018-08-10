@@ -1,7 +1,5 @@
 ﻿@using AtmoreChamber.Models
 @model IEnumerable<Product>
-<h1>Atmore Chamber Store</h1>
-<br />
 @{ List<Item> cart = (List<Item>)Session["cart"] != null ? (List<Item>)Session["cart"] : new List<Item>();
 
     float transactionTotal = 0;
@@ -14,6 +12,8 @@
     }
 
 }
+<h1>Atmore Chamber Store</h1>
+<br />
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
 
