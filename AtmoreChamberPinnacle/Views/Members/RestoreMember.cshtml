@@ -1,0 +1,72 @@
+﻿@model AtmoreChamber.Models.Members
+
+@{
+    ViewBag.Title = "RestoreMember";
+}
+
+@using (Html.BeginForm("RestoreMember", "Members", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+
+    <h2>Do you want to restore this member?</h2>
+
+    <div>
+        <h4>Members</h4>
+        <hr />
+        @Html.HiddenFor(model => model.Id)
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Business)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Business)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BusinessAddress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BusinessAddress)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Fax)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Fax)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Website)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Website)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Industry)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Industry)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+        @Html.ActionLink("Restore Member", "RestoreConfirmed", new { id = Model.Id})
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

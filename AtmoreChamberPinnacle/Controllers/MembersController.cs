@@ -19,7 +19,8 @@ namespace AtmoreChamber.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            return View(db.Members.Where(m=>m.DeletedDate == null).ToList());
+            //return View(db.Members.Where(m=>m.DeletedDate == null).ToList());
+            return View(db.Members.ToList());
         }
 
         // GET: Members/Details/5
@@ -122,6 +123,37 @@ namespace AtmoreChamber.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet, Authorize(Roles = "Admin")]
+        public ActionResult Restore(int? id)
+        {
+            return RedirectToAction("RestoreMember", new { id = id});
+        }
+
+        public ActionResult RestoreMember(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Members members = db.Members.Find(id);
+            if (members == null)
+            {
+                return HttpNotFound();
+            }
+            return View(members);
+        }
+
+        public ActionResult RestoreConfirmed(int? id)
+        {
+            Members members = db.Members.Find(id);
+            if (members != null)
+            {
+                members.DeletedDate = null;
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -130,5 +162,10 @@ namespace AtmoreChamber.Controllers
             }
             base.Dispose(disposing);
         }
+
+        
+
+
+
     }
 }
