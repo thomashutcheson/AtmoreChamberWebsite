@@ -1,0 +1,65 @@
+﻿@using AtmoreChamber.Models
+@{ List<Item> cart = (List<Item>)Session["cart"] != null ? (List<Item>)Session["cart"] : new List<Item>();
+    ViewBag.Title = "Address Form";
+
+    float transactionTotal = 0;
+    int fullquantity = 0;
+
+    foreach (var item in cart)
+    {
+        transactionTotal += item.TotalPrice;
+        fullquantity += item.Quantity;
+    }
+}
+
+<h2>AddressForm</h2>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+
+        <li><a href="@Url.Action("Index", "Cart")" class="card-link fa fa-shopping-cart">Cart:</a></li>
+        <li>( @fullquantity )</li>
+
+    </ol>
+</nav>
+
+<form>
+    <fieldset>
+        <legend>Shipping Address</legend>
+        Address:<br>
+        <input type="text" name="AddressLine1" value="137 N Main St, Atmore"><br>
+        City:<br>
+        <input type="text" name="Locality" value="Atmore"><br>
+        State:<br>
+        <input type="text" name="State" value="Alabama"><br>
+        Zipcode:<br>
+        <input type="number" name="PostalCode" value="36502"><br>
+        Country:<br>
+        <input type="text" name="Country" value="United States"><br>
+    </fieldset>
+    <hr />
+    <fieldset>
+        <legend>Billing Address</legend>
+        Address:<br>
+        <input type="text" name="AddressLine1" value="137 N Main St, Atmore"><br>
+        City:<br>
+        <input type="text" name="Locality" value="Atmore"><br>
+        State:<br>
+        <input type="text" name="State" value="Alabama"><br>
+        Zipcode:<br>
+        <input type="number" name="PostalCode" value="36502"><br>
+        Country:<br>
+        <input type="text" name="Country" value="United States"><br>
+    </fieldset>
+    <br />
+        <input type="submit" value="Submit"><br>
+</form>
+
+<div style="height:50px;">
+    <div style="float:right">
+        <a class="btn btn-lg btn-primary btn-block" href="/Products/SqPaymentForm">Purchase using Square</a>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,153 @@
+﻿@using AtmoreChamber.Models
+@model Transaction
+@{ List<Item> cart = (List<Item>)Session["cart"] != null ? (List<Item>)Session["cart"] : new List<Item>();
+    ViewBag.Title = "Cart";
+
+    float transactionTotal = 0;
+    int fullquantity = 0;
+
+    foreach (var item in cart)
+    {
+        transactionTotal += item.TotalPrice;
+        fullquantity += item.Quantity;
+    }
+}
+
+<!-- link to the SqPaymentForm library -->
+<script type="text/javascript" src="https://js.squareup.com/v2/paymentform">
+</script>
+
+<!-- link to the local SqPaymentForm initialization -->
+<script type="text/javascript" src="~/Scripts/sqpaymentform.js">
+</script>
+
+<!-- link to the custom styles for SqPaymentForm -->
+<link rel="stylesheet" type="text/css" href="~/Content/sqpaymentform.css">
+
+<h2>Square Payment Form</h2>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+
+        <li><a href="@Url.Action("Index", "Cart")" class="card-link fa fa-shopping-cart">Cart:</a></li>
+        <li>( @fullquantity )</li>
+
+    </ol>
+</nav>
+
+<table class="table">
+
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Description
+        </th>
+        <th style="text-align:center">
+            Quantity
+        </th>
+        <th style="text-align:center">
+            Price
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in cart)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(cartItem => item.Product.ProductTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(cartItem => item.Product.ProductDescription)
+            </td>
+            <td style="text-align:center">
+                @Html.DisplayFor(cartItem => item.Quantity)
+            </td>
+            <td style="text-align:center">
+                @Html.DisplayFor(cartItem => item.TotalPrice)
+            </td>
+        </tr>
+    }
+    <tr style="text-align:center">
+        <td></td>
+        <td></td>
+        <td><b>Total Quantity</b></td>
+        <td><b>Cart total</b></td>
+    </tr>
+    <tr style="text-align:center">
+        <td></td>
+        <td></td>
+        <td>@fullquantity</td>
+        <td>@transactionTotal</td>
+    </tr>
+</table>
+
+<hr/>
+
+<div class="row">
+
+    <div id="sq-ccbox">
+        <!--
+          You should replace the action attribute of the form with the path of
+          the URL you want to POST the nonce to (for example, "/process-card")
+        -->
+        <form id="nonce-form" novalidate action="Products/SqPaymentProcessing" method="post">
+            Pay with a Credit Card
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Card Number:</td>
+                        <td><div id="sq-card-number"></div></td>
+                    </tr>
+                    <tr>
+                        <td>CVV:</td>
+                        <td><div id="sq-cvv"></div></td>
+                    </tr>
+                    <tr>
+                        <td>Expiration Date: </td>
+                        <td><div id="sq-expiration-date"></div></td>
+                    </tr>
+                    <tr>
+                        <td>Postal Code:</td>
+                        <td><div id="sq-postal-code"></div></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button id="sq-creditcard" class="button-credit-card" onclick="requestCardNonce(event)">
+                                Pay with card
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!--
+              After a nonce is generated it will be assigned to this hidden input field.
+            -->
+            <input type="hidden" id="card-nonce" name="nonce">
+        </form>
+    </div>
+
+    <div id="sq-walletbox">
+        Pay with a Digital Wallet
+        <div id="sq-apple-pay-label" class="wallet-not-enabled">Apple Pay for Web not enabled</div>
+        <!-- Placeholder for Apple Pay for Web button -->
+        <button id="sq-apple-pay" class="button-apple-pay"></button>
+
+        <div id="sq-masterpass-label" class="wallet-not-enabled">Masterpass not enabled</div>
+        <!-- Placeholder for Masterpass button -->
+        <button id="sq-masterpass" class="button-masterpass"></button>
+    </div>
+</div>
+
+<!--
+<script>
+    function posttransaction() {
+
+        $('card-nonce')
+
+    }
+</script>
+    -->
+

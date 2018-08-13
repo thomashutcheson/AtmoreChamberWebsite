@@ -1,0 +1,81 @@
+﻿@using AtmoreChamber.Models
+@{ List<Item> cart = (List<Item>)Session["cart"] != null ? (List<Item>)Session["cart"] : new List<Item>();
+    ViewBag.Title = "Cart";
+
+    float transactionTotal = 0;
+    int fullquantity = 0;
+
+    foreach (var item in cart)
+    {
+        transactionTotal += item.TotalPrice;
+        fullquantity += item.Quantity;
+    }
+}
+
+<h2>Cart</h2>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+
+        <li><a href="@Url.Action("Index", "Cart")" class="card-link fa fa-shopping-cart">Cart:</a></li>
+        <li>( @fullquantity )</li>
+
+    </ol>
+</nav>
+
+<table class="table">
+
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Description
+        </th>
+        <th style="text-align:center">
+            Quantity
+        </th>
+        <th style="text-align:center">
+            Price
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in cart)
+    {
+        <tr >
+            <td>
+                @Html.DisplayFor(cartItem => item.Product.ProductTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(cartItem => item.Product.ProductDescription)
+            </td>
+            <td style="text-align:center">
+                @Html.DisplayFor(cartItem => item.Quantity)
+            </td>
+            <td style="text-align:center">
+                @Html.DisplayFor(cartItem => item.TotalPrice)
+            </td>
+        </tr>
+    }
+    <tr style="text-align:center">
+        <td></td>
+        <td></td>
+        <td><b>Total Quantity</b></td>
+        <td><b>Cart total</b></td>
+    </tr>
+    <tr style="text-align:center">
+        <td></td>
+        <td></td>
+        <td>@fullquantity</td>
+        <td>@transactionTotal</td>
+    </tr>
+</table>
+
+<hr />
+
+<div style="height:50px;">
+    <div style="float:right">
+        <a class="btn btn-lg btn-primary btn-block" href="/Products/SqPaymentForm">Purchase using Square</a>
+    </div>
+</div>
+

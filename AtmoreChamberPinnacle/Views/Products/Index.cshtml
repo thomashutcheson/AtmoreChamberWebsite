@@ -1,51 +1,96 @@
-﻿@model IEnumerable<AtmoreChamber.Models.Product>
+﻿@using AtmoreChamber.Models
+@model IEnumerable<Product>
+@{ List<Item> cart = (List<Item>)Session["cart"] != null ? (List<Item>)Session["cart"] : new List<Item>();
 
-@{
-    ViewBag.Title = "Index";
+    float transactionTotal = 0;
+    int fullquantity = 0;
+
+    foreach (var item in cart)
+    {
+        transactionTotal += item.TotalPrice;
+        fullquantity += item.Quantity;
+    }
+
 }
+<h1>Atmore Chamber Store</h1>
+<br />
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
 
-<h2>Index</h2>
+        <li><a href="@Url.Action("Index", "Cart")" class="card-link fa fa-shopping-cart">Cart:</a></li>
+        <li>( @fullquantity )</li>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ProductTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProductDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProductIMG)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProductPrice)
-        </th>
-        <th></th>
-    </tr>
+    </ol>
+</nav>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductIMG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductPrice)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })
-        </td>
-    </tr>
-}
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <div style="height:200px; width:200px;">
+                    <img style="height:100%; width:100%;" src="~/Content/images/products/@item.ProductIMG" alt="Alternate Text" />
+                </div>
+                <h5 class="card-header bg-dark-teal"> @Html.ActionLink(@item.ProductTitle, "Details", new { id = item.ProductID })</h5>
+                <div class="card-body">
+                    <p class="card-text">
+                        @Html.DisplayFor(modelItem => item.ProductDescription)<br />
+                        @Html.DisplayFor(modelItem => item.ProductPrice)<br />
+                    </p>
+                    <hr />
+                    <a href="@Url.Action("Buy", "Cart", new { id = item.ProductID})" class="card-link fa fa-shopping-cart"> Add to Cart</a>
+                </div>
+            </div>
+        </div>
 
-</table>
+    }
+</div>
+
+<div style="height:50px;">
+    <div style="float:right">
+        <a class="btn btn-lg btn-primary btn-block" href="/Cart/Index">View Cart</a>
+    </div>
+</div>
+
+<br />
+
+<!-- Old list HTML
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductIMG)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductPrice)
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductIMG)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductPrice)
+                    </td>
+                </tr>
+            }
+        </table>
+
+
+    -->
+<hr />
