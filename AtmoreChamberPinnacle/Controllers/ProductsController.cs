@@ -184,7 +184,8 @@ namespace AtmoreChamberPinnacle.Controllers
 
     
         // Charge the card nonce
-        public ActionResult ChargeNonce(int amount, string nonce, string locationId)
+        [HttpPost]
+        public ActionResult ChargeNonce(int transactionAmount, string nonce, string locationId)
         {
             // Every payment you process for a given business have a unique idempotency key.
             // If you're unsure whether a particular payment succeeded, you can reattempt
@@ -195,7 +196,7 @@ namespace AtmoreChamberPinnacle.Controllers
             // Monetary amounts are specified in the smallest unit of the applicable currency.
             // This amount is in cents. It's also hard-coded for $1, which is not very useful.
             string currency = "USD";
-            Money money = new Money(amount, Money.CurrencyEnum.USD);
+            Money money = new Money(transactionAmount, Money.CurrencyEnum.USD);
             ChargeRequest body = new ChargeRequest(AmountMoney: money, IdempotencyKey: idempotencyKey, CardNonce: nonce);
             TransactionsApi transactionsApi = new TransactionsApi();
             var response = transactionsApi.Charge(locationId, body);
