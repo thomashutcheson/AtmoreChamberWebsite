@@ -92,7 +92,7 @@
           You should replace the action attribute of the form with the path of
           the URL you want to POST the nonce to (for example, "/process-card")
         -->
-        <form id="nonce-form" novalidate action="Products/SqPaymentProcessing" method="post">
+        <form id="nonce-form" novalidate action="ChargeNonce" method="post">
             Pay with a Credit Card
             <table>
                 <tbody>
@@ -123,9 +123,13 @@
             </table>
 
             <!--
-              After a nonce is generated it will be assigned to this hidden input field.
-            -->
+      After a nonce is generated it will be assigned to this hidden input field.
+    -->
             <input type="hidden" id="card-nonce" name="nonce">
+            <input type="hidden" id="locationId" name="locationId">
+            <input type="hidden" id="amount" name="amount" data-value="@transactionTotal">
+            <script>$('#amount').value = $('#amount').attr('data-value'); alert($('#amount').attr('data-value'));</script>
+
         </form>
     </div>
 
@@ -141,13 +145,4 @@
     </div>
 </div>
 
-<!--
-<script>
-    function posttransaction() {
-
-        $('card-nonce')
-
-    }
-</script>
-    -->
 

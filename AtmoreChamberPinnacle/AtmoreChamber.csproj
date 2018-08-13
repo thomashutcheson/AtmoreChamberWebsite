@@ -696,6 +696,14 @@
     <Content Include="Content\fullcalendar.min.css" />
     <Content Include="Content\fullcalendar.print.css" />
     <Content Include="Content\fullcalendar.print.min.css" />
+    <Content Include="Content\images\events\christmas parade.jpg" />
+    <Content Include="Content\images\events\Mayfest.jpg" />
+    <Content Include="Content\images\events\PICT0004.jpg" />
+    <Content Include="Content\images\events\powwow.jpg" />
+    <Content Include="Content\images\events\taste of the south.jpg" />
+    <Content Include="Content\images\events\TOS 2011 Winner- Davids Catfish.jpg" />
+    <Content Include="Content\images\events\Untitled.png" />
+    <Content Include="Content\images\events\YLA.jpg" />
     <Content Include="Content\images\realestate\atmore-real-estate.jpg" />
     <Content Include="Content\sqpaymentform.css" />
     <Content Include="errorpages\404.html" />

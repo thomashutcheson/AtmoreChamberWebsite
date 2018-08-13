@@ -1,4 +1,7 @@
 ﻿using AtmoreChamber.Models;
+using Square.Connect.Api;
+using Square.Connect.Model;
+using System;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
@@ -166,22 +169,22 @@ namespace AtmoreChamberPinnacle.Controllers
 
         // Below is the Square API required C#
 
-/*
-        public Example()
-        {
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-        }
 
-        // Retrieving your location IDs
-        public void RetrieveLocations()
-        {
-            LocationsApi _locationsApi = new LocationsApi();
-            var response = _locationsApi.ListLocations();
-        }
+        //public Example()
+        //{
+        //    Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+        //}
 
-        /*
+        //// Retrieving your location IDs
+        //public void RetrieveLocations()
+        //{
+        //    LocationsApi _locationsApi = new LocationsApi();
+        //    var response = _locationsApi.ListLocations();
+        //}
+
+    
         // Charge the card nonce
-        public void ChargeNonce()
+        public ActionResult ChargeNonce(int amount, string nonce, string locationId)
         {
             // Every payment you process for a given business have a unique idempotency key.
             // If you're unsure whether a particular payment succeeded, you can reattempt
@@ -191,20 +194,19 @@ namespace AtmoreChamberPinnacle.Controllers
 
             // Monetary amounts are specified in the smallest unit of the applicable currency.
             // This amount is in cents. It's also hard-coded for $1, which is not very useful.
-            int amount = 100;
             string currency = "USD";
-            Money money = new Money(amount, Money.ToCurrencyEnum(currency));
-
-            string nonce = "YOUR_NONCE";
-            string locationId = "YOUR_LOCATION_ID";
+            Money money = new Money(amount, Money.CurrencyEnum.USD);
             ChargeRequest body = new ChargeRequest(AmountMoney: money, IdempotencyKey: idempotencyKey, CardNonce: nonce);
             TransactionsApi transactionsApi = new TransactionsApi();
             var response = transactionsApi.Charge(locationId, body);
+
+
+            return View("SqPaymentProcessing", "products");
         }
 
 
 
-    */
+    
 
 
 

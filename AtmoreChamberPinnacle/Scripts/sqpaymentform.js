@@ -132,6 +132,7 @@ var paymentForm = new SqPaymentForm({
 
             // Assign the nonce value to the hidden form field
             document.getElementById('card-nonce').value = nonce;
+            document.getElementById('locationId').value = locationId;
 
             // POST the nonce form to the payment processing page
             document.getElementById('nonce-form').submit();
