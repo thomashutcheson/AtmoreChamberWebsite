@@ -42,16 +42,20 @@
     </tr>
     @foreach (var item in cart)
     {
-        <tr >
+        <tr>
             <td>
                 @Html.DisplayFor(cartItem => item.Product.ProductTitle)
             </td>
             <td>
                 @Html.DisplayFor(cartItem => item.Product.ProductDescription)
             </td>
+
             <td style="text-align:center">
+                <button type="button" class="btn btn-outline-secondary btn-sm">-</button>
                 @Html.DisplayFor(cartItem => item.Quantity)
+                <button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='@Url.Action("Buy", "Cart", new { id = item.Product.ProductID})'">+</button>
             </td>
+
             <td style="text-align:center">
                 @Html.DisplayFor(cartItem => item.TotalPrice)
             </td>

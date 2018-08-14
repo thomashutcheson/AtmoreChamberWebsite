@@ -38,7 +38,7 @@
                         @Html.DisplayFor(modelItem => item.ProductPrice)<br />
                     </p>
                     <hr />
-                    <a href="@Url.Action("Buy", "Cart", new { id = item.ProductID})" class="card-link fa fa-shopping-cart"> Add to Cart</a>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="location.href='@Url.Action("Buy", "Cart", new { id = item.ProductID})'"><i class="card-link fa fa-shopping-cart"></i> Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -48,7 +48,8 @@
 
 <div style="height:50px;">
     <div style="float:right">
-        <a class="btn btn-lg btn-primary btn-block" href="/Cart/Index">View Cart</a>
+        <button type="button" class="btn btn-primary btn-sm" onclick="location.href='@Url.Action("Index", "Cart")'"><i class="fa fa-shopping-cart"></i> View Cart</button>
+            
     </div>
 </div>
 
