@@ -51,9 +51,9 @@
             </td>
 
             <td style="text-align:center">
-                <button type="button" class="btn btn-outline-secondary btn-sm">-</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='@Url.Action("CartRemove", "Cart", new { id = item.Product.ProductID})'">-</button>
                 @Html.DisplayFor(cartItem => item.Quantity)
-                <button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='@Url.Action("Buy", "Cart", new { id = item.Product.ProductID})'">+</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" onclick="location.href='@Url.Action("CartBuy", "Cart", new { id = item.Product.ProductID})'">+</button>
             </td>
 
             <td style="text-align:center">
