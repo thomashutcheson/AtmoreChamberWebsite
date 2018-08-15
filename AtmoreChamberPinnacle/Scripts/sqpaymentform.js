@@ -3,7 +3,7 @@ var applicationId = "sandbox-sq0idp-DgF0U3T1g7uBfN7Ya-1fWQ";
 
 // Set the location ID
 var locationId = "CBASECShk_d_mWkyYVT6bgiV52AgAQ";
-var tamount = 100;
+//var tamount = 100;
 /*
  * function: requestCardNonce
  *
@@ -128,12 +128,13 @@ var paymentForm = new SqPaymentForm({
                 return;
             }
 
-            alert('Nonce received: ' + nonce); /* FOR TESTING ONLY */
+           
 
             // Assign the nonce value to the hidden form field
             document.getElementById('card-nonce').value = nonce;
             document.getElementById('locationId').value = locationId;
-            document.getElementById('transactionAmount').value = tamount;
+        
+
 
             // POST the nonce form to the payment processing page
             document.getElementById('nonce-form').submit();
@@ -181,7 +182,7 @@ var paymentForm = new SqPaymentForm({
          */
         paymentFormLoaded: function () {
             tamount = $('#transactionAmount').Value;
-
+            //tamount = 100;
         }
     }
 });

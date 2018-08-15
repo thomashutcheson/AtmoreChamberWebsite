@@ -2,6 +2,7 @@
 using Square.Connect.Api;
 using Square.Connect.Model;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
@@ -157,6 +158,9 @@ namespace AtmoreChamberPinnacle.Controllers
         public ActionResult SqPaymentForm()
         {
 
+
+
+
             return View();
         }
 
@@ -166,48 +170,96 @@ namespace AtmoreChamberPinnacle.Controllers
             return View();
         }
 
-
-        // Below is the Square API required C#
-
-
-        //public Example()
-        //{
-        //    Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-        //}
-
-        //// Retrieving your location IDs
-        //public void RetrieveLocations()
-        //{
-        //    LocationsApi _locationsApi = new LocationsApi();
-        //    var response = _locationsApi.ListLocations();
-        //}
-
-    
-        // Charge the card nonce
-        [HttpPost]
-        public ActionResult ChargeNonce(int transactionAmount, string nonce, string locationId)
+        public ActionResult PaymentConfirmation()
         {
-            // Every payment you process for a given business have a unique idempotency key.
-            // If you're unsure whether a particular payment succeeded, you can reattempt
-            // it with the same idempotency key without worrying about double charging
-            // the buyer.
+
+            return View();
+        }
+
+
+      
+        public ActionResult ChargeNonce()
+        {
+
+            string accessToken = "sandbox-sq0atb-D4TFGj4GmAew2U1yDuxe3Q";
+
+            // Set the location ID
+            string locId = "CBASECShk_d_mWkyYVT6bgiV52AgAQ";
+
+
+            //Create configuration object for apiClient
+            Square.Connect.Client.Configuration apiConfiguration = new Square.Connect.Client.Configuration();
+            apiConfiguration.AccessToken = accessToken;
+
+            //Create instance of api client
+            Square.Connect.Client.ApiClient apiClient = new Square.Connect.Client.ApiClient(apiConfiguration);
+
+
+            //Create instance of Orders api
+            OrdersApi orderApi = new OrdersApi(apiConfiguration);
+
+            //Create instance of Orders api
+            CheckoutApi checkoutApi = new CheckoutApi(apiConfiguration);
+
+
+            //Grab items from session and put them in a list
+            List<Item> cartSession = (List<Item>)Session["cart"] != null ? (List<Item>)Session["cart"] : new List<Item>();
+
+
+            //Create Line Item Request instance
+            List<CreateOrderRequestLineItem> lineItems = new List<CreateOrderRequestLineItem>();
+
+            //Create line item for each item stored in the cart session
+            foreach (var item in cartSession)
+            {
+                int lineItemPrice = (int)(item.Product.ProductPrice * 100);
+
+                Money price = new Money(lineItemPrice, Money.CurrencyEnum.USD);
+                CreateOrderRequestLineItem lineItem = new CreateOrderRequestLineItem(item.Product.ProductTitle, item.Quantity.ToString(), price);
+
+                lineItems.Add(lineItem);
+
+            }
+
             string idempotencyKey = Guid.NewGuid().ToString();
 
-            // Monetary amounts are specified in the smallest unit of the applicable currency.
-            // This amount is in cents. It's also hard-coded for $1, which is not very useful.
-            string currency = "USD";
-            Money money = new Money(transactionAmount, Money.CurrencyEnum.USD);
-            ChargeRequest body = new ChargeRequest(AmountMoney: money, IdempotencyKey: idempotencyKey, CardNonce: nonce);
-            TransactionsApi transactionsApi = new TransactionsApi();
-            var response = transactionsApi.Charge(locationId, body);
+            //Create new order request instance with cart items
+            CreateOrderRequest orderRequest = new CreateOrderRequest(idempotencyKey, null, lineItems);
+
+            //Get return URL
+            var urlBuilder =
+            new System.UriBuilder(Request.Url.AbsoluteUri)
+            {
+                Path = Url.Action("PaymentConfirmation", "Products"),
+                Query = null,
+            };
+
+            Uri uri = urlBuilder.Uri;
+            string url = urlBuilder.ToString();
+
+            CreateCheckoutRequest checkoutRequest = new CreateCheckoutRequest(idempotencyKey, orderRequest, true, null, null, null, url);
+
+            try
+            {
+                var checkoutResponse = checkoutApi.CreateCheckout(locId, checkoutRequest);
+
+                return Redirect(checkoutResponse.Checkout.CheckoutPageUrl);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
 
 
-            return View("SqPaymentProcessing", "products");
+
+
         }
 
 
 
-    
+
 
 
 

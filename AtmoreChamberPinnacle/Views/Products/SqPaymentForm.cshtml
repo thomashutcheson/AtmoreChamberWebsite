@@ -4,6 +4,7 @@
     ViewBag.Title = "Cart";
 
     float transactionTotal = 0;
+    int totalAmount = 0;
     int fullquantity = 0;
 
     foreach (var item in cart)
@@ -11,6 +12,11 @@
         transactionTotal += item.TotalPrice;
         fullquantity += item.Quantity;
     }
+
+
+ 
+    totalAmount = (int)(transactionTotal * 100);
+   
 }
 
 <!-- link to the SqPaymentForm library -->
@@ -25,6 +31,7 @@
 <link rel="stylesheet" type="text/css" href="~/Content/sqpaymentform.css">
 
 <h2>Square Payment Form</h2>
+
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -125,9 +132,9 @@
             <!--
       After a nonce is generated it will be assigned to this hidden input field.
     -->
-            <input type="hidden" id="card-nonce" name="nonce">
-            <input type="hidden" id="locationId" name="locationId">
-            <input type="hidden" id="transactionAmount" name="transactionAmount" value="@transactionTotal">
+            <input type="hidden" id="card-nonce" name="nonce" value="">
+            <input type="hidden" id="locationId" name="locationId" value="">
+            <input type="hidden" id="transactionAmount" name="transactionAmount" value="@totalAmount">
             @*<input type="hidden" id="transactionAmount" name="transactionAmount" data-value="@transactionTotal">
             <script>$('#transactionAmount').value = $('#transactionAmount').attr('data-value'); alert($('#transactionAmount').attr('data-value'));</script>*@
 
