@@ -38,7 +38,6 @@ namespace AtmoreChamberPinnacle.Controllers
         }
 
         // GET: Products/Create
-        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -49,7 +48,6 @@ namespace AtmoreChamberPinnacle.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "ProductID,ProductTitle,ProductDescription,ImagePath,ProductPrice,ImageFile")] Product product)
         {
             if (ModelState.IsValid)
@@ -82,7 +80,6 @@ namespace AtmoreChamberPinnacle.Controllers
         }
 
         // GET: Products/Edit/5
-        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -102,7 +99,6 @@ namespace AtmoreChamberPinnacle.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "ProductID,ProductTitle,ProductDescription,ImagePath,ProductPrice")] Product products)
         {
             if (ModelState.IsValid)
@@ -115,7 +111,6 @@ namespace AtmoreChamberPinnacle.Controllers
         }
 
         // GET: Products/Delete/5
-        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -133,7 +128,6 @@ namespace AtmoreChamberPinnacle.Controllers
         // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Product products = db.Products.Find(id);
@@ -162,16 +156,22 @@ namespace AtmoreChamberPinnacle.Controllers
 
         public ActionResult SqPaymentForm()
         {
+
+
+
+
             return View();
         }
 
         public ActionResult SqPaymentProcessing()
         {
+
             return View();
         }
 
         public ActionResult PaymentConfirmation()
         {
+
             return View();
         }
 
