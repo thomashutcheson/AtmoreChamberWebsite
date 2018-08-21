@@ -241,25 +241,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808091442129_pleasework.cs" />
-    <Compile Include="Migrations\201808091442129_pleasework.Designer.cs">
-      <DependentUpon>201808091442129_pleasework.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808091521251_pleasework2.cs" />
-    <Compile Include="Migrations\201808091521251_pleasework2.Designer.cs">
-      <DependentUpon>201808091521251_pleasework2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808211451315_productimage.cs" />
-    <Compile Include="Migrations\201808211451315_productimage.Designer.cs">
-      <DependentUpon>201808211451315_productimage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808211951359_pushtosmarter.cs" />
-    <Compile Include="Migrations\201808211951359_pushtosmarter.Designer.cs">
-      <DependentUpon>201808211951359_pushtosmarter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808212006521_productadminroles.cs" />
-    <Compile Include="Migrations\201808212006521_productadminroles.Designer.cs">
-      <DependentUpon>201808212006521_productadminroles.cs</DependentUpon>
+    <Compile Include="Migrations\201808212031018_sasp.cs" />
+    <Compile Include="Migrations\201808212031018_sasp.Designer.cs">
+      <DependentUpon>201808212031018_sasp.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -577,20 +561,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808091442129_pleasework.resx">
-      <DependentUpon>201808091442129_pleasework.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808091521251_pleasework2.resx">
-      <DependentUpon>201808091521251_pleasework2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808211451315_productimage.resx">
-      <DependentUpon>201808211451315_productimage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808211951359_pushtosmarter.resx">
-      <DependentUpon>201808211951359_pushtosmarter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808212006521_productadminroles.resx">
-      <DependentUpon>201808212006521_productadminroles.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808212031018_sasp.resx">
+      <DependentUpon>201808212031018_sasp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
