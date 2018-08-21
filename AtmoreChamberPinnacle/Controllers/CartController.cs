@@ -91,9 +91,13 @@ namespace AtmoreChamberPinnacle.Controllers
         {
             List<Item> cart = (List<Item>)Session["cart"];
             int index = isExist(id);
-            if (cart[index].Quantity > 0)
+            if (cart[index].Quantity > 1)
             {
                 cart[index].Quantity--;
+            }
+            else
+            {
+                cart.RemoveAt(index);
             }
             Session["cart"] = cart;
             return RedirectToAction("Index", "Cart");
