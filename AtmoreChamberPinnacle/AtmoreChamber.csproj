@@ -261,6 +261,10 @@
     <Compile Include="Migrations\201808212006521_productadminroles.Designer.cs">
       <DependentUpon>201808212006521_productadminroles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808212025451_babyshark.cs" />
+    <Compile Include="Migrations\201808212025451_babyshark.Designer.cs">
+      <DependentUpon>201808212025451_babyshark.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -589,6 +593,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808212006521_productadminroles.resx">
       <DependentUpon>201808212006521_productadminroles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808212025451_babyshark.resx">
+      <DependentUpon>201808212025451_babyshark.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
