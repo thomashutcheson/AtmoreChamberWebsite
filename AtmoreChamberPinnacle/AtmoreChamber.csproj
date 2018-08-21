@@ -249,9 +249,16 @@
     <Compile Include="Migrations\201808091521251_pleasework2.Designer.cs">
       <DependentUpon>201808091521251_pleasework2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808211451315_productimage.cs" />
+    <Compile Include="Migrations\201808211451315_productimage.Designer.cs">
+      <DependentUpon>201808211451315_productimage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808211951359_pushtosmarter.cs" />
+    <Compile Include="Migrations\201808211951359_pushtosmarter.Designer.cs">
+      <DependentUpon>201808211951359_pushtosmarter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ErrorViewModel.cs" />
@@ -541,7 +548,6 @@
     <Content Include="Views\Products\Manage.cshtml" />
     <Content Include="Views\Products\SqPaymentForm.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
-    <Content Include="Views\Products\AddressForm.cshtml" />
     <Content Include="Views\Products\PaymentConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -570,6 +576,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808091521251_pleasework2.resx">
       <DependentUpon>201808091521251_pleasework2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808211451315_productimage.resx">
+      <DependentUpon>201808211451315_productimage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808211951359_pushtosmarter.resx">
+      <DependentUpon>201808211951359_pushtosmarter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

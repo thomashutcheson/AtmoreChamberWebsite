@@ -8,7 +8,6 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 
 namespace AtmoreChamberPinnacle.Controllers
@@ -49,30 +48,35 @@ namespace AtmoreChamberPinnacle.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductID,ProductTitle,ProductDescription,ProductIMG,ProductPrice")] Product product)
+        public ActionResult Create([Bind(Include = "ProductID,ProductTitle,ProductDescription,ImagePath,ProductPrice,ImageFile")] Product product)
         {
             if (ModelState.IsValid)
             {
                 if (Request.Files != null)
                 {
-                    foreach (HttpPostedFile file in Request.Files)
+                    foreach (string key in Request.Files)
                     {
+                        var file = Request.Files[key]; 
                         if (file.ContentLength > 0)
                         {
-                            var fileName = Path.GetFileName(file.FileName);
-                            var path = Path.Combine(Server.MapPath("~/Content/images/products"), fileName);
-                            file.SaveAs(path);
-                            product.ProductIMG = fileName;
+                            string fileName = Path.GetFileNameWithoutExtension(product.ImageFile.FileName);
+                            string extension = Path.GetExtension(product.ImageFile.FileName);
+                            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                            product.ImagePath = "~/Content/images/products/" + fileName;
+                            fileName = Path.Combine(Server.MapPath("~/Content/images/products/"), fileName);
+                            product.ImageFile.SaveAs(fileName);
+                            //using (ApplicationDbContext db = new ApplicationDbContext())
+                            {
+                                db.Products.Add(product);
+                                db.SaveChanges();
+                            }
+                            ModelState.Clear();
+                            return View();
                         }
                     }
                 }
-
-                db.Products.Add(product);
-                db.SaveChanges();
-                return RedirectToAction("Index");
             }
-
-            return View(product);
+            return View();
         }
 
         // GET: Products/Edit/5
@@ -95,7 +99,7 @@ namespace AtmoreChamberPinnacle.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductID,ProductTitle,ProductDescription,ProductIMG,ProductPrice")] Product products)
+        public ActionResult Edit([Bind(Include = "ProductID,ProductTitle,ProductDescription,ImagePath,ProductPrice")] Product products)
         {
             if (ModelState.IsValid)
             {
@@ -149,11 +153,6 @@ namespace AtmoreChamberPinnacle.Controllers
             return View(Products);
         }
 
-        public ActionResult AddressForm()
-        {
-
-            return View();
-        }
 
         public ActionResult SqPaymentForm()
         {
@@ -177,7 +176,7 @@ namespace AtmoreChamberPinnacle.Controllers
         }
 
 
-      
+
         public ActionResult ChargeNonce()
         {
 
@@ -227,17 +226,19 @@ namespace AtmoreChamberPinnacle.Controllers
             CreateOrderRequest orderRequest = new CreateOrderRequest(idempotencyKey, null, lineItems);
 
             //Get return URL
-            var urlBuilder =
-            new System.UriBuilder(Request.Url.AbsoluteUri)
-            {
-                Path = Url.Action("PaymentConfirmation", "Products"),
-                Query = null,
-            };
+            //var urlBuilder =
+            //new System.UriBuilder(Request.Url.AbsoluteUri)
+            //{
+            //    Path = Url.Action("PaymentConfirmation", "Products"),
+            //    Query = null,
+            //};
 
-            Uri uri = urlBuilder.Uri;
-            string url = urlBuilder.ToString();
+            //Uri uri = urlBuilder.Uri;
+            //string url = urlBuilder.ToString();
+            //UNCOMMENT AND CHANGE LAST NULL PARAMETER TO url
 
-            CreateCheckoutRequest checkoutRequest = new CreateCheckoutRequest(idempotencyKey, orderRequest, true, null, null, null, url);
+
+            CreateCheckoutRequest checkoutRequest = new CreateCheckoutRequest(idempotencyKey, orderRequest, true, null, null, null);
 
             try
             {
@@ -251,19 +252,6 @@ namespace AtmoreChamberPinnacle.Controllers
 
                 throw;
             }
-
-
-
-
         }
-
-
-
-
-
-
-
-
-
     }
 }

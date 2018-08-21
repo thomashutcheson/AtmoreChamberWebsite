@@ -18,8 +18,8 @@ namespace AtmoreChamber.Models
         [DisplayName("Description")]
         public string ProductDescription { get; set; }
 
-        [DisplayName("Image")]
-        public string ProductIMG { get; set; }
+        [DisplayName("Upload Image")]
+        public string ImagePath { get; set; }
 
         [Required]
         [DisplayName("Price")]
@@ -27,7 +27,7 @@ namespace AtmoreChamber.Models
         public float ProductPrice { get; set; }
 
         [NotMapped]
-        public HttpPostedFileBase files { get; set; }
+        public HttpPostedFileBase ImageFile { get; set; }
 
     }
 }

@@ -29,7 +29,7 @@
         <div class="col-md-4">
             <div class="card">
                 <div style="height:200px; width:200px;">
-                    <img style="height:100%; width:100%;" src="~/Content/images/products/@item.ProductIMG" alt="Alternate Text" />
+                    <img style="height:100%; width:100%;" src="~/Content/images/products/@item.ImagePath" alt="Alternate Text" />
                 </div>
                 <h5 class="card-header bg-dark-teal"> @Html.ActionLink(@item.ProductTitle, "Details", new { id = item.ProductID })</h5>
                 <div class="card-body">
@@ -67,7 +67,7 @@
                     @Html.DisplayNameFor(model => model.ProductDescription)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.ProductIMG)
+                    @Html.DisplayNameFor(model => model.ImagePath)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.ProductPrice)
@@ -84,7 +84,7 @@
                         @Html.DisplayFor(modelItem => item.ProductDescription)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.ProductIMG)
+                        @Html.DisplayFor(modelItem => item.ImagePath)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.ProductPrice)

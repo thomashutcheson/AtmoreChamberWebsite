@@ -9,7 +9,7 @@
 @using (Html.BeginForm("Create", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Products</h4>
         <hr />
@@ -31,9 +31,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ProductIMG, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-            <input type="file" name="file" id="file">
+                @*<input type="hidden" name="ImagePath" id="ImagePath" value="@Model.ImagePath" />*@
+                <input type="file" name="ImageFile" id="ImageFile" />
             </div>
         </div>
 
