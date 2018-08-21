@@ -44,7 +44,10 @@ namespace AtmoreChamberPinnacle.Controllers
         {
             List<Item> cart = (List<Item>)Session["cart"];
             int index = isExist(id);
-            cart[index].Quantity--;
+            if (cart[index].Quantity > 0)
+            {
+                cart[index].Quantity--;
+            }
             Session["cart"] = cart;
             return RedirectToAction("Index", "Products");
         }
@@ -88,7 +91,14 @@ namespace AtmoreChamberPinnacle.Controllers
         {
             List<Item> cart = (List<Item>)Session["cart"];
             int index = isExist(id);
-            cart[index].Quantity--;
+            if (cart[index].Quantity > 1)
+            {
+                cart[index].Quantity--;
+            }
+            else
+            {
+                cart.RemoveAt(index);
+            }
             Session["cart"] = cart;
             return RedirectToAction("Index", "Cart");
         }
