@@ -38,6 +38,7 @@ namespace AtmoreChamberPinnacle.Controllers
         }
 
         // GET: Products/Create
+        [HttpGet]
         [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
@@ -47,6 +48,29 @@ namespace AtmoreChamberPinnacle.Controllers
         // POST: Products/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        public ActionResult Create(Product productModel)
+        {
+            string fileName = Path.GetFileNameWithoutExtension(productModel.ImageFile.FileName);
+            string extension = Path.GetExtension(productModel.ImageFile.FileName);
+            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+            productModel.ImagePath = "~/Content/images/products/" + fileName;
+            fileName = Path.Combine(Server.MapPath("~/Content/images/products/"), fileName);
+            productModel.ImageFile.SaveAs(fileName);
+            using (ApplicationDbContext db = new ApplicationDbContext())
+            {
+                db.Products.Add(productModel);
+                db.SaveChanges();
+            }
+            ModelState.Clear();
+            return View();
+        }
+
+
+        /* commented out, would not upload image to directory
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
@@ -79,7 +103,7 @@ namespace AtmoreChamberPinnacle.Controllers
                 }
             }
             return View();
-        }
+        } */
 
         // GET: Products/Edit/5
         [Authorize(Roles = "Admin")]

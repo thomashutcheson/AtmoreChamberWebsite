@@ -245,6 +245,10 @@
     <Compile Include="Migrations\201808212025451_babyshark.Designer.cs">
       <DependentUpon>201808212025451_babyshark.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808221458274_aug22.cs" />
+    <Compile Include="Migrations\201808221458274_aug22.Designer.cs">
+      <DependentUpon>201808221458274_aug22.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -280,6 +284,7 @@
     <Content Include="Content\images\events\TOS 2011 Winner- Davids Catfish.jpg" />
     <Content Include="Content\images\events\Untitled.png" />
     <Content Include="Content\images\events\YLA.jpg" />
+    <Content Include="Content\images\products\atmore1.jpg" />
     <Content Include="Content\images\realestate\atmore-real-estate.jpg" />
     <Content Include="Content\sqpaymentform.css" />
     <Content Include="errorpages\404.html" />
@@ -542,7 +547,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\products\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
@@ -563,6 +567,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201808212025451_babyshark.resx">
       <DependentUpon>201808212025451_babyshark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808221458274_aug22.resx">
+      <DependentUpon>201808221458274_aug22.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
