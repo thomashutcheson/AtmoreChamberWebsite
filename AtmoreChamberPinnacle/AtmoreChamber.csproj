@@ -241,18 +241,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808212031018_sasp.cs" />
-    <Compile Include="Migrations\201808212031018_sasp.Designer.cs">
-      <DependentUpon>201808212031018_sasp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808212025451_babyshark.cs" />
-    <Compile Include="Migrations\201808212025451_babyshark.Designer.cs">
-      <DependentUpon>201808212025451_babyshark.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808221458274_aug22.cs" />
-    <Compile Include="Migrations\201808221458274_aug22.Designer.cs">
-      <DependentUpon>201808221458274_aug22.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -565,17 +553,6 @@
     </None>
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808212031018_sasp.resx">
-      <DependentUpon>201808212031018_sasp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808212025451_babyshark.resx">
-      <DependentUpon>201808212025451_babyshark.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808221458274_aug22.resx">
-      <DependentUpon>201808221458274_aug22.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
