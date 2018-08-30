@@ -185,6 +185,13 @@ div .middle-align {
     margin-bottom: 30px;
 }
 
+
+.ml-auto, .mx-auto {
+    margin-left: 0 !important;
+}
+
+
+
 /* Cards */
 .card-link, .fa-envelope:before , .fa-envelope {
     color: #21a3a2;

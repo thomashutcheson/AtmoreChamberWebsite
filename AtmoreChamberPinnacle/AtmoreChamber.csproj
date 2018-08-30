@@ -241,18 +241,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808212031018_sasp.cs" />
-    <Compile Include="Migrations\201808212031018_sasp.Designer.cs">
-      <DependentUpon>201808212031018_sasp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808212025451_babyshark.cs" />
-    <Compile Include="Migrations\201808212025451_babyshark.Designer.cs">
-      <DependentUpon>201808212025451_babyshark.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808221458274_aug22.cs" />
-    <Compile Include="Migrations\201808221458274_aug22.Designer.cs">
-      <DependentUpon>201808221458274_aug22.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -364,12 +352,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\images\appicons\manifest.json" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
+    <None Include="Properties\PublishProfiles\Default Settings1.pubxml" />
     <None Include="Properties\PublishProfiles\DeveloperServer.pubxml" />
     <Content Include="Scripts\credentials.json" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper.min.js.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
@@ -565,17 +556,6 @@
     </None>
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808212031018_sasp.resx">
-      <DependentUpon>201808212031018_sasp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808212025451_babyshark.resx">
-      <DependentUpon>201808212025451_babyshark.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808221458274_aug22.resx">
-      <DependentUpon>201808221458274_aug22.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

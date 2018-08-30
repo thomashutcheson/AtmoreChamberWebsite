@@ -5,20 +5,20 @@
     {
         @Html.AntiForgeryToken()
 
-        <li class="nav-item">
-        <li>
+        <div class="nav-item" style="display:inline-flex; width: 150px;">
+        <span>
             @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { id = "usernameLink", })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-        </li>
+        </span>
+        <span><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></span>
+        </div>
     }
 }
 else
 {
-    <div class="user-account">
-        <li> @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" }) </li>
-        <br />
-        <li> @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" }) </li>
+    <div class="user-account" style="display:inline-flex; width: 150px;">
+        <span> @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" }) </span>
+        
+        <span> @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" }) </span>
     </div>
 
 }

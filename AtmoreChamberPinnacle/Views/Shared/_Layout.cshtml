@@ -36,6 +36,8 @@
     <!-- Datatables CSS-->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
 
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -91,10 +93,6 @@
                                 <a class="dropdown-item" href="/AtmoreChamber/BoardOfDirectors">Board of Directors</a>
                                 <a class="dropdown-item" href="/AtmoreChamber/Staff">Staff</a>
                                 <a class="dropdown-item middle-align" href="/Members/Index">Members of the Chamber</a>
-                                
-
-
-
 
                             </div>
                         </li>
@@ -109,9 +107,24 @@
                             </li>
                         }
 
-                        <li class="nav-item middle-align">
-                            <a class="nav-link" href="/Products/Index">Shop the Chamber</a>
-                        </li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item dropdown middle-align">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownShopTheChamber" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Shop The Chamber
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownShopTheChamber">
+                                    <a class="dropdown-item" href="/Products/Index">Shop the Chamber</a>
+                                    <a class="dropdown-item" href="/Products/Manage">Manage the Chamber</a>
+                                    </div>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item middle-align">
+                                <a class="nav-link" href="/Products/Index">Shop the Chamber</a>
+                            </li>
+                        }
                         <div id="nav-container-3" class="col-sm-1">
                             <li id="user-account">
                                 @Html.Partial("_LoginPartial")
