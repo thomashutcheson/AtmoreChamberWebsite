@@ -23,6 +23,8 @@ namespace AtmoreChamber.Models
 
         public System.Data.Entity.DbSet<Event> Events { get; set; }
 
+        public System.Data.Entity.DbSet<AtmoreChamberPinnacle.Models.School> Schools { get; set; }
+
         //public System.Data.Entity.DbSet<CalendarEventGroup> EventGroups { get; set; }
 
     }
