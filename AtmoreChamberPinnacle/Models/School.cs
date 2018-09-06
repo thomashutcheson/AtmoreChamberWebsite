@@ -15,7 +15,7 @@ namespace AtmoreChamberPinnacle.Models
 
         [Required]
         [DisplayName("Type of School")]
-        public string SchoolTypeID { get; set; }
+        public int SchoolTypeID { get; set; }
 
         [Required]
         [DisplayName("Link to Website")]

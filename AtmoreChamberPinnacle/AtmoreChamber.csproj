@@ -245,6 +245,14 @@
     <Compile Include="Migrations\201808311459271_aug31.Designer.cs">
       <DependentUpon>201808311459271_aug31.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808311600559_schoolmigrate.cs" />
+    <Compile Include="Migrations\201808311600559_schoolmigrate.Designer.cs">
+      <DependentUpon>201808311600559_schoolmigrate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808311617045_2ndschool.cs" />
+    <Compile Include="Migrations\201808311617045_2ndschool.Designer.cs">
+      <DependentUpon>201808311617045_2ndschool.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -567,6 +575,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201808311459271_aug31.resx">
       <DependentUpon>201808311459271_aug31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808311600559_schoolmigrate.resx">
+      <DependentUpon>201808311600559_schoolmigrate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808311617045_2ndschool.resx">
+      <DependentUpon>201808311617045_2ndschool.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
