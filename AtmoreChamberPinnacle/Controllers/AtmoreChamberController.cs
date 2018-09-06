@@ -45,6 +45,10 @@ namespace AtmoreChamber.Controllers
             return View();
         }
 
+        public ActionResult ProgramOfWork()
+        {
+            return View();
+        }
 
         //public ActionResult Error()
         //{
