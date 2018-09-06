@@ -30,6 +30,22 @@ namespace AtmoreChamber.Controllers
             return View();
         }
 
+        public ActionResult ChamberHistory()
+        {
+            return View();
+        }
+
+        public ActionResult MembershipInfo()
+        {
+            return View();
+        }
+
+        public ActionResult OurTrustees()
+        {
+            return View();
+        }
+
+
         //public ActionResult Error()
         //{
         //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

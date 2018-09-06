@@ -253,6 +253,10 @@
     <Compile Include="Migrations\201808311617045_2ndschool.Designer.cs">
       <DependentUpon>201808311617045_2ndschool.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809061841352_revertfix.cs" />
+    <Compile Include="Migrations\201809061841352_revertfix.Designer.cs">
+      <DependentUpon>201809061841352_revertfix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -552,6 +556,9 @@
     <Content Include="Views\Products\SqPaymentForm.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Products\PaymentConfirmation.cshtml" />
+    <Content Include="Views\AtmoreChamber\ChamberHistory.cshtml" />
+    <Content Include="Views\AtmoreChamber\MembershipInfo.cshtml" />
+    <Content Include="Views\AtmoreChamber\OurTrustees.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -581,6 +588,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808311617045_2ndschool.resx">
       <DependentUpon>201808311617045_2ndschool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809061841352_revertfix.resx">
+      <DependentUpon>201809061841352_revertfix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
