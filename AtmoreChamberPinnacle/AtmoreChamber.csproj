@@ -237,6 +237,7 @@
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\TextBoxesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -264,6 +265,10 @@
     <Compile Include="Migrations\201809101812022_addedtextbox2.cs" />
     <Compile Include="Migrations\201809101812022_addedtextbox2.Designer.cs">
       <DependentUpon>201809101812022_addedtextbox2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809101815115_addedtextbox3.cs" />
+    <Compile Include="Migrations\201809101815115_addedtextbox3.Designer.cs">
+      <DependentUpon>201809101815115_addedtextbox3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -621,6 +626,11 @@
     <Content Include="Views\AtmoreChamber\MembershipInfo.cshtml" />
     <Content Include="Views\AtmoreChamber\OurTrustees.cshtml" />
     <Content Include="Views\AtmoreChamber\ProgramOfWork.cshtml" />
+    <Content Include="Views\TextBoxes\Create.cshtml" />
+    <Content Include="Views\TextBoxes\Delete.cshtml" />
+    <Content Include="Views\TextBoxes\Details.cshtml" />
+    <Content Include="Views\TextBoxes\Edit.cshtml" />
+    <Content Include="Views\TextBoxes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -659,6 +669,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809101812022_addedtextbox2.resx">
       <DependentUpon>201809101812022_addedtextbox2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809101815115_addedtextbox3.resx">
+      <DependentUpon>201809101815115_addedtextbox3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
