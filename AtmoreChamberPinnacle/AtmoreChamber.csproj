@@ -261,6 +261,10 @@
     <Compile Include="Migrations\201809101808381_addedtextbox.Designer.cs">
       <DependentUpon>201809101808381_addedtextbox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809101812022_addedtextbox2.cs" />
+    <Compile Include="Migrations\201809101812022_addedtextbox2.Designer.cs">
+      <DependentUpon>201809101812022_addedtextbox2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -652,6 +656,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809101808381_addedtextbox.resx">
       <DependentUpon>201809101808381_addedtextbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809101812022_addedtextbox2.resx">
+      <DependentUpon>201809101812022_addedtextbox2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
