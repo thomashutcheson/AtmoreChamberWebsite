@@ -237,42 +237,13 @@
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
-    <Compile Include="Controllers\TextBoxesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808311459271_aug31.cs" />
-    <Compile Include="Migrations\201808311459271_aug31.Designer.cs">
-      <DependentUpon>201808311459271_aug31.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808311600559_schoolmigrate.cs" />
-    <Compile Include="Migrations\201808311600559_schoolmigrate.Designer.cs">
-      <DependentUpon>201808311600559_schoolmigrate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808311617045_2ndschool.cs" />
-    <Compile Include="Migrations\201808311617045_2ndschool.Designer.cs">
-      <DependentUpon>201808311617045_2ndschool.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809061841352_revertfix.cs" />
-    <Compile Include="Migrations\201809061841352_revertfix.Designer.cs">
-      <DependentUpon>201809061841352_revertfix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809101808381_addedtextbox.cs" />
-    <Compile Include="Migrations\201809101808381_addedtextbox.Designer.cs">
-      <DependentUpon>201809101808381_addedtextbox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809101812022_addedtextbox2.cs" />
-    <Compile Include="Migrations\201809101812022_addedtextbox2.Designer.cs">
-      <DependentUpon>201809101812022_addedtextbox2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809101815115_addedtextbox3.cs" />
-    <Compile Include="Migrations\201809101815115_addedtextbox3.Designer.cs">
-      <DependentUpon>201809101815115_addedtextbox3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809102030093_postrevertfix.cs" />
-    <Compile Include="Migrations\201809102030093_postrevertfix.Designer.cs">
-      <DependentUpon>201809102030093_postrevertfix.cs</DependentUpon>
+    <Compile Include="Migrations\201809102048261_sept92018.cs" />
+    <Compile Include="Migrations\201809102048261_sept92018.Designer.cs">
+      <DependentUpon>201809102048261_sept92018.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -281,14 +252,12 @@
     <Compile Include="Models\ErrorViewModel.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Item.cs" />
-    <Compile Include="Models\Jumbotron.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Members.cs" />
     <Compile Include="Models\MemberDirectory.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\School.cs" />
     <Compile Include="Models\Sponsor.cs" />
-    <Compile Include="Models\TextBox.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Models\UserRoles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -630,11 +599,6 @@
     <Content Include="Views\AtmoreChamber\MembershipInfo.cshtml" />
     <Content Include="Views\AtmoreChamber\OurTrustees.cshtml" />
     <Content Include="Views\AtmoreChamber\ProgramOfWork.cshtml" />
-    <Content Include="Views\TextBoxes\Create.cshtml" />
-    <Content Include="Views\TextBoxes\Delete.cshtml" />
-    <Content Include="Views\TextBoxes\Details.cshtml" />
-    <Content Include="Views\TextBoxes\Edit.cshtml" />
-    <Content Include="Views\TextBoxes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -656,29 +620,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808311459271_aug31.resx">
-      <DependentUpon>201808311459271_aug31.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808311600559_schoolmigrate.resx">
-      <DependentUpon>201808311600559_schoolmigrate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808311617045_2ndschool.resx">
-      <DependentUpon>201808311617045_2ndschool.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809061841352_revertfix.resx">
-      <DependentUpon>201809061841352_revertfix.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809101808381_addedtextbox.resx">
-      <DependentUpon>201809101808381_addedtextbox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809101812022_addedtextbox2.resx">
-      <DependentUpon>201809101812022_addedtextbox2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809101815115_addedtextbox3.resx">
-      <DependentUpon>201809101815115_addedtextbox3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809102030093_postrevertfix.resx">
-      <DependentUpon>201809102030093_postrevertfix.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809102048261_sept92018.resx">
+      <DependentUpon>201809102048261_sept92018.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

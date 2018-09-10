@@ -25,7 +25,6 @@ namespace AtmoreChamber.Models
 
         public System.Data.Entity.DbSet<AtmoreChamberPinnacle.Models.School> Schools { get; set; }
 
-        public System.Data.Entity.DbSet<AtmoreChamberPinnacle.Models.TextBox> TextBoxes { get; set; }
 
         //public System.Data.Entity.DbSet<CalendarEventGroup> EventGroups { get; set; }
 
