@@ -270,6 +270,10 @@
     <Compile Include="Migrations\201809101815115_addedtextbox3.Designer.cs">
       <DependentUpon>201809101815115_addedtextbox3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809102030093_postrevertfix.cs" />
+    <Compile Include="Migrations\201809102030093_postrevertfix.Designer.cs">
+      <DependentUpon>201809102030093_postrevertfix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -672,6 +676,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809101815115_addedtextbox3.resx">
       <DependentUpon>201809101815115_addedtextbox3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809102030093_postrevertfix.resx">
+      <DependentUpon>201809102030093_postrevertfix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
