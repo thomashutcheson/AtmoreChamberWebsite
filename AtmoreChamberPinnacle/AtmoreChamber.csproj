@@ -235,6 +235,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
+    <Compile Include="Controllers\ParagraphController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -604,6 +605,11 @@
     <Content Include="Views\AtmoreChamber\MembershipInfo.cshtml" />
     <Content Include="Views\AtmoreChamber\OurTrustees.cshtml" />
     <Content Include="Views\AtmoreChamber\ProgramOfWork.cshtml" />
+    <Content Include="Views\Paragraph\Create.cshtml" />
+    <Content Include="Views\Paragraph\Delete.cshtml" />
+    <Content Include="Views\Paragraph\Details.cshtml" />
+    <Content Include="Views\Paragraph\Edit.cshtml" />
+    <Content Include="Views\Paragraph\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
