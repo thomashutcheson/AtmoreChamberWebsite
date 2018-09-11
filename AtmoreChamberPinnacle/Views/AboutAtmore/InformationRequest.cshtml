@@ -23,3 +23,14 @@
         </a>
     </p>
 </div>
+
+<script>
+
+    $(document).ready(function () {
+        $.fn.editable.defaults.mode = 'popup';
+        $('#Title').editable();
+        $('#SubTitle').editable();
+        $('#Text').editable();
+    });
+
+</script>

@@ -201,8 +201,8 @@
             <h2>
                 <a href="#" id="Title" data-type="text" data-pk="10" data-url="/post" data-title="Enter Title">
                     Recreation
-                    </a>
-</h2>
+                </a>
+            </h2>
             <hr />
 
             <div class="container-fluid">
@@ -235,9 +235,20 @@
                                 For the youth of the community, the <strong>Atmore Area YMCA</strong> provides a full range of programs such as soccer, basketball, tee-ball, dance,
                                 gymnastics and martial arts.  After-school programs and summer day camps are also available with activities planned by the experienced YMCA staff.
                                 A variety of exercise classes, free weights and a fitness center are available for use by seniors and adults alike.  The YMCA offers a nursery service, if needed.
-                                </a>
+                            </a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script>
+
+            $(document).ready(function () {
+                $.fn.editable.defaults.mode = 'popup';
+                $('#Title').editable();
+                $('#SubTitle').editable();
+                $('#Text').editable();
+            });
+
+        </script>
