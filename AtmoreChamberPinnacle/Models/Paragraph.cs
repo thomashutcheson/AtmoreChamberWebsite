@@ -13,6 +13,8 @@ namespace AtmoreChamberPinnacle.Models
 
         public string Link { get; set; }
 
+        public string Subtitle { get; set; }
+
         [Required]
         public string Text { get; set; }
 

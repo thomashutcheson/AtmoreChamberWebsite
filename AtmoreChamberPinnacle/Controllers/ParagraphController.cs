@@ -47,7 +47,7 @@ namespace AtmoreChamberPinnacle.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,Link,Text")] Paragraph paragraph)
+        public ActionResult Create([Bind(Include = "ID,Title,Link,Subtitle,Text")] Paragraph paragraph)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace AtmoreChamberPinnacle.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Title,Link,Text")] Paragraph paragraph)
+        public ActionResult Edit([Bind(Include = "ID,Title,Link,Subtitle,Text")] Paragraph paragraph)
         {
             if (ModelState.IsValid)
             {
