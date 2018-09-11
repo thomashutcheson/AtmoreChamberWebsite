@@ -2,6 +2,7 @@
     ViewBag.Title = "Home";
 }
 
+
 <div class="row Atmore-Card">
     <div class="col-lg-8 mb-4">
         <div class="card h-100">
@@ -100,17 +101,23 @@
 <div class="row">
     <div class="col-lg-4 mb-4">
         <div class="card h-100">
-            <h4 class="card-header bg-atmore-red">Advocating</h4>
+            <h4 class="card-header bg-atmore-red">
+                <a href="#" id="Title" data-type="text" data-pk="2" data-url="/post" data-title="Enter Title">
+                    Advocating
+                </a>
+            </h4>
             <img src="~/Content/images/home/advocating.png" class="card-image-top img-fluid" />
             <div class="card-body">
                 <p class="card-text">
-                    Our community is in the most exciting and transformative time in
-                    recent history, and we have every reason to believe that our future will
-                    be one of growth and prosperity. At the center of that limitless future
-                    and at the core of that prosperity, is our business community. Business
-                    is the engine that powers our community, supports our schools and
-                    churches, and contributes to the overall well-being and quality of our
-                    daily lives.
+                    <a href="#" id="Text" data-type="textarea" data-pk="2" data-url="/post" data-title="Enter Text">
+                        Our community is in the most exciting and transformative time in
+                        recent history, and we have every reason to believe that our future will
+                        be one of growth and prosperity. At the center of that limitless future
+                        and at the core of that prosperity, is our business community. Business
+                        is the engine that powers our community, supports our schools and
+                        churches, and contributes to the overall well-being and quality of our
+                        daily lives.
+                    </a>
                 </p>
             </div>
             <div class="card-footer">
@@ -120,17 +127,23 @@
     </div>
     <div class="col-lg-4 mb-4">
         <div class="card h-100">
-            <h4 class="card-header bg-atmore-red">Educating</h4>
+            <h4 class="card-header bg-atmore-red">
+                <a href="#" id="Title" data-type="text" data-pk="3" data-url="/post" data-title="Enter Title">
+                    Educating
+                </a>
+            </h4>
             <img src="~/Content/images/home/educating.png" class="card-image-top img-fluid" />
             <div class="card-body">
                 <p class="card-text">
-                    The Chamber has a wide range of programs and events to
-                    promote business and cultivate networking, such as our Business and
-                    Breakfast, Business After 5, Chamber 101, Ask the Expert, and Young
-                    Professionals Group. The Chamber is also fully committed to economic
-                    development and growing our workforce through programs such as
-                    Youth Leadership Atmore, Chamber Ambassadors, Leadership
-                    Atmore, and Atmore Young Professionals.
+                    <a href="#" id="Text" data-type="textarea" data-pk="3" data-url="/post" data-title="Enter Text">
+                        The Chamber has a wide range of programs and events to
+                        promote business and cultivate networking, such as our Business and
+                        Breakfast, Business After 5, Chamber 101, Ask the Expert, and Young
+                        Professionals Group. The Chamber is also fully committed to economic
+                        development and growing our workforce through programs such as
+                        Youth Leadership Atmore, Chamber Ambassadors, Leadership
+                        Atmore, and Atmore Young Professionals.
+                    </a>
                 </p>
             </div>
             <div class="card-footer">
@@ -140,16 +153,22 @@
     </div>
     <div class="col-lg-4 mb-4">
         <div class="card h-100">
-            <h4 class="card-header bg-atmore-red">Connecting</h4>
+            <h4 class="card-header bg-atmore-red">
+                <a href="#" id="Title" data-type="text" data-pk="4" data-url="/post" data-title="Enter Title">
+                    Connecting
+                </a>
+            </h4>
             <img src="~/Content/images/home/connecting.png" class="card-image-top img-fluid" />
             <div class="card-body">
                 <p class="card-text">
-                    The Atmore Area Chamber of Commerce is fully committed to
-                    helping our business community fulfill this important role. Not only
-                    does the Chamber work to promote our businesses, but we also keep
-                    close contact with elected officials, and civic organizations to make sure
-                    that the business community has a seat at the table when decisions are
-                    made about the future of the Atmore Area.
+                    <a href="#" id="Text" data-type="textarea" data-pk="4" data-url="/post" data-title="Enter Text">
+                        The Atmore Area Chamber of Commerce is fully committed to
+                        helping our business community fulfill this important role. Not only
+                        does the Chamber work to promote our businesses, but we also keep
+                        close contact with elected officials, and civic organizations to make sure
+                        that the business community has a seat at the table when decisions are
+                        made about the future of the Atmore Area.
+                    </a>
                 </p>
             </div>
             <div class="card-footer">
@@ -160,4 +179,16 @@
 </div>
 <!-- /.row -->
 
+
+<script>
+
+    $(document).ready(function () {
+        $('#Title').editable();
+    });
+
+    $(document).ready(function () {
+        $('#Text').editable();
+    });
+
+</script>
 
