@@ -245,6 +245,10 @@
     <Compile Include="Migrations\201809102048261_sept92018.Designer.cs">
       <DependentUpon>201809102048261_sept92018.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809111328168_paragraphmodel.cs" />
+    <Compile Include="Migrations\201809111328168_paragraphmodel.Designer.cs">
+      <DependentUpon>201809111328168_paragraphmodel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -255,6 +259,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Members.cs" />
     <Compile Include="Models\MemberDirectory.cs" />
+    <Compile Include="Models\Paragraph.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\School.cs" />
     <Compile Include="Models\Sponsor.cs" />
@@ -622,6 +627,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809102048261_sept92018.resx">
       <DependentUpon>201809102048261_sept92018.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809111328168_paragraphmodel.resx">
+      <DependentUpon>201809111328168_paragraphmodel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
