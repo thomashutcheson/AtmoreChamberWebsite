@@ -183,10 +183,8 @@
 <script>
 
     $(document).ready(function () {
+        $.fn.editable.defaults.mode = 'popup';  
         $('#Title').editable();
-    });
-
-    $(document).ready(function () {
         $('#Text').editable();
     });
 
