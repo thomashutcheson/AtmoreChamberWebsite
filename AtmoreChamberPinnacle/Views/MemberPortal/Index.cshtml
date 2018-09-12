@@ -1,0 +1,41 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+@{
+    ViewBag.Title = "Member Portal";
+}
+
+<head>
+    <title>Member Portal</title>
+</head>
+
+@if (User.IsInRole("Admin") || User.IsInRole("Member"))
+{
+<body>
+    <h2>Member Portal</h2>
+    <hr />
+
+    <ul>
+        <li><a href="#">Update Profile</a></li>
+        <li><a href="#">Submit Logo</a></li>
+        <li><a href="#">Submit News/Information for release</a></li>
+        <li><a href="#">Renew Membership</a></li>
+        <li><a href="#">Pay Invoice</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Member Discount Information</a></li>
+    </ul>
+
+
+    <p>
+        Nunc viverra porttitor lorem quis sagittis. Suspendisse rhoncus nec ante eu tempus. Integer feugiat ultricies massa ut laoreet.
+        Vivamus quam neque, ultricies vel lectus ac, pellentesque aliquet lorem.
+        Morbi dictum mi non ligula convallis pulvinar sit amet id mauris. Nulla tempus sed turpis sed ultricies.
+        Integer eu dapibus neque, a fringilla sem. Morbi commodo quam at placerat sodales.
+        Nullam risus metus, bibendum molestie tempus non, consectetur in risus. Morbi suscipit dui scelerisque nunc efficitur, ac elementum est pulvinar.
+        Pellentesque cursus mauris turpis, nec ornare orci laoreet sit amet.
+        Nullam non quam dignissim, suscipit arcu ut, sollicitudin nunc.
+    </p>
+
+
+
+</body>
+}
+</html>

@@ -234,6 +234,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
+    <Compile Include="Controllers\MemberPortalController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\ParagraphController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
@@ -626,6 +627,7 @@
     <Content Include="Views\Paragraph\Details.cshtml" />
     <Content Include="Views\Paragraph\Edit.cshtml" />
     <Content Include="Views\Paragraph\Index.cshtml" />
+    <Content Include="Views\MemberPortal\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -123,6 +123,14 @@
                             </li>
                         }
 
+                        @if (User.IsInRole("Admin") || User.IsInRole("Member"))
+                        {
+                            <li class="nav-item middle-align">
+                                <a class="nav-link" href="/MemberPortal/Index/">Member Portal</a>
+                            </li>
+                        }
+
+
                         @if (User.IsInRole("Admin"))
                         {
                             <li class="nav-item dropdown middle-align">
