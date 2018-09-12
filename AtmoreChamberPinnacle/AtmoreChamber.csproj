@@ -628,6 +628,11 @@
     <Content Include="Views\Paragraph\Edit.cshtml" />
     <Content Include="Views\Paragraph\Index.cshtml" />
     <Content Include="Views\MemberPortal\Index.cshtml" />
+    <Content Include="Views\MemberPortal\UpdateProfile.cshtml" />
+    <Content Include="Views\MemberPortal\SubmitLogo.cshtml" />
+    <Content Include="Views\MemberPortal\SubmitInfo.cshtml" />
+    <Content Include="Views\MemberPortal\RenewMembership.cshtml" />
+    <Content Include="Views\MemberPortal\Resources.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

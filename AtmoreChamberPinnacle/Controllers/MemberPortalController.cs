@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace AtmoreChamberPinnacle.Controllers
 {
@@ -13,5 +9,32 @@ namespace AtmoreChamberPinnacle.Controllers
         {
             return View();
         }
+
+        public ActionResult RenewMembership()
+        {
+            return View();
+        }
+
+        public ActionResult Resources()
+        {
+            return View();
+        }
+
+        public ActionResult SubmitInfo()
+        {
+            return View();
+        }
+
+        public ActionResult SubmitLogo()
+        {
+            return View();
+        }
+
+        public ActionResult UpdateProfile()
+        {
+            return View();
+        }
+
+
     }
 }

@@ -1,0 +1,18 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+@{
+    ViewBag.Title = "Submit Logo";
+}
+
+<head>
+    <title>Submit Logo</title>
+</head>
+
+@if (User.IsInRole("Admin") || User.IsInRole("Member"))
+{
+    <body>
+        <h2>Submit Logo</h2>
+        <hr />
+    </body>
+}
+</html>
+

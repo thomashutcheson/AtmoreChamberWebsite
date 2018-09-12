@@ -1,0 +1,17 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+@{
+    ViewBag.Title = "Update Profile";
+}
+
+<head>
+    <title>Update Profile</title>
+</head>
+
+@if (User.IsInRole("Admin") || User.IsInRole("Member"))
+{
+    <body>
+        <h2>Update Profile</h2>
+        <hr />
+    </body>
+}
+</html>
