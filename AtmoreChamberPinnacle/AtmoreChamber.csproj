@@ -267,6 +267,10 @@
     <Compile Include="Migrations\201809111937132_xeditablescripts.Designer.cs">
       <DependentUpon>201809111937132_xeditablescripts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809131929121_testfix.cs" />
+    <Compile Include="Migrations\201809131929121_testfix.Designer.cs">
+      <DependentUpon>201809131929121_testfix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -671,6 +675,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809111937132_xeditablescripts.resx">
       <DependentUpon>201809111937132_xeditablescripts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809131929121_testfix.resx">
+      <DependentUpon>201809131929121_testfix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

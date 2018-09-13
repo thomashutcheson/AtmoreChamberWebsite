@@ -2,6 +2,7 @@
 
 namespace AtmoreChamberPinnacle.Controllers
 {
+    [Authorize]
     public class MemberPortalController : Controller
     {
         // GET: MemberPortal
